@@ -1,7 +1,7 @@
 # Learning the Lingo
 From the groundbreaking development team who brought you Salmon Cookies and BusMall... The Listeners presents - Learning the Lingo
 
-An interactive city defense game which calls the user into action to save Kahn-Baan City from cataclysmic extraterrestrial objects using different language vocabulary words as missile launch codes. To save Kahn-Baan City and it's residents a hero must rise up and correctly translate and input the words to eliminate the looming threat. Realise your destiny and become a hero of ages.
+An interactive city defense game which calls the user into action to save Kahn-Baan City from cataclysmic extraterrestrial objects using different language vocabulary words as missile launch codes. To save Kahn-Baan City and its residents a hero must rise up and correctly translate and input the words to eliminate the looming threat. Realise your destiny and become a hero of ages.
 
 # Our Team
 Joanna Arroyo - CEO/Head of Product
