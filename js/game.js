@@ -17,13 +17,9 @@ PLANNING:
 Store words
   Constructor function for word objects
   Array of word objects?
-
 Function to check word inputted with objects
-
 Instantiate word objects
-
 while loop
-
 
 */
 // Global variables
@@ -66,6 +62,7 @@ function renderWord(){
   form.appendChild(formInput);
 }
 
+//Event handler
 function handleUserInput(event){
   event.preventDefault();
   var userGuess = event.target.formName.value.toLowerCase();
@@ -73,7 +70,7 @@ function handleUserInput(event){
     scoreTracker++;
     form.removeChild(formLabel);
     form.removeChild(formInput);
-  }
+  } // TODO: else goes here
 }
 
 form.addEventListener('submit', handleUserInput);
