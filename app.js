@@ -1,8 +1,9 @@
-var testForm = document.getElementById('user_name');
+var testForm = document.getElementById('user_input');
 var formSubmitHandler = function (formSubmit) {
   formSubmit.preventDefault();
-  var userNameForm = formSubmit.target.username.value;
-  
+  console.log(formSubmit);
+  var userNameForm = formSubmit.target.user_name.value;
+  console.log(userNameForm);
 };
  testForm.addEventListener('submit', formSubmitHandler);
 
