@@ -7,6 +7,8 @@
 <ul>
     <li>As a user, I want to play this game to learn new languages because I want to learn a language.</li>
     <li>As a user, I want the information to be accurate so I learn the language correctly.</li>
+    <li>As a user, I want to be able to see how well I did so that I can track my progress in the game.</li>
+    <li>As a user, I want the game to remember information about me so that I can compare with my friends.</li>
 </ul>
 
 <h1>Stretch Goals</h1>
@@ -18,7 +20,6 @@
 </ul>
 <ul>
     <li>As a user, I want the interface to be interesting so that I want to play the game more.</li>
-    <li>As a user, I want to be able to see how well I did so that I can track my progress in the game.</li>
     <li>As a user, I want to score my high score so that I can compare with my friends.</li>
     <li>As a user, I want to be a able to change the difficulty so that I can learn more and the ability to replay the game.</li>
 </ul>
