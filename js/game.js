@@ -1,5 +1,14 @@
 'use strict';
 
+
+//This is where are the start button is being modified
+var startButton = document.getElementById('startButton');
+startButton.addEventListener("click", handleStartGame);
+
+function handleStartGame(){
+  console.log('The game has begun!');
+}
+
 console.log('testing!');
 
 /*
@@ -60,3 +69,4 @@ new WordObject('no', 'no');
 new WordObject('hello', 'hola');
 new WordObject('goodbye', 'adios');
 new WordObject('monkey', 'mono');
+
