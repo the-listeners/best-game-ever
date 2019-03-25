@@ -12,7 +12,7 @@ Pratiibh Bassi - Technical Lead/Engineer
 
 Williams Argenal - Design Lead/Engineer
 
-Denevan Pettie - Research Lead/Engineer
+Denevan Pettie - Research and Concept Lead/Engineer
 
 # Our Mission
 Learning a language is a gargantuan and intimidating venture. To make the initial forray more manageable, Learn the Lingo seeks to provide a fun and interactive way to learn a variety of vocabulary words.
