@@ -9,7 +9,7 @@
     <li>As a user, I want the information to be accurate so I learn the language correctly.</li>
 </ul>
 
-<h1>Strech Goals</h1>
+<h1>Stretch Goals</h1>
 <ul>
     <li>As a developer, I want our game to look unique so that it stands out from the competition and attracts more users.</li>
     <li>As a developer, I want to make the game flow without unnecessary distractions so that the user finds the game smooth to play.</li>
