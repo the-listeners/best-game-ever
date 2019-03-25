@@ -5,9 +5,13 @@ An interactive city defense game which calls the user into action to save Kahn-B
 
 # Our Team
 Joanna Arroyo - CEO/Head of Product
+
 Melissa Stock - Lead Software Engineer
+
 Pratiibh Bassi - Engineer
+
 Williams Argenal - Engineer
+
 Denevan Pettie - Engineer
 
 # Our Mission
