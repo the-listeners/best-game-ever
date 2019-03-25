@@ -15,7 +15,7 @@ Williams Argenal - Design Lead/Engineer
 Denevan Pettie - Research and Concept Lead/Engineer
 
 # Our Mission
-Learning a language is a gargantuan and intimidating venture. To make the initial forray more manageable, Learn the Lingo seeks to provide a fun and interactive way to learn a variety of vocabulary words.
+Learning a language is a gargantuan and intimidating venture. To make the initial forray more manageable, Learning the Lingo seeks to provide a fun and interactive way to learn a variety of vocabulary words.
 
 # Tools and Usage
 Learning the Lingo is developed with JavaScript, HTML, and CSS utilizing DOM manipulation and local storage.
