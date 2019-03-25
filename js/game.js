@@ -29,7 +29,10 @@ while loop
 // Global variables
 var wordObjectArray = [];
 var randomNumber;
-var asteroidGenerated;
+var selectedWord;
+
+// DOM REFERENCES
+var form = document.getElementById('asteroids');
 
 // Constructor function to create words
 var WordObject = function(english, spanish){
@@ -45,11 +48,25 @@ function randomizer(){
 }
 
 // Generating word for asteroid // TO DO
-function generateAsteroidWord (){
+function randomWord(){
   randomizer();
-  var asteroidGenerated = wordObjectArray[randomNumber].spanish;
-  console.log(asteroidGenerated);
+  var selectedWord = wordObjectArray[randomNumber].spanish;
+  return selectedWord;
 }
+
+// Function to create form
+function renderWord(){
+  var formLabel = document.createElement('Label');
+  formLabel.innerHTML = randomWord();
+  form.appendChild(formLabel);
+}
+
+function handleUserInput1(){
+  //check
+  
+}
+
+form.addEventListener('submit', handleUserInput1);
 
 // Instantiate words
 new WordObject('one', 'uno');
@@ -73,4 +90,5 @@ new WordObject('hello', 'hola');
 new WordObject('goodbye', 'adios');
 new WordObject('monkey', 'mono');
 
-generateAsteroidWord();
+
+renderWord();
