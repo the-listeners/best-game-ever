@@ -29,7 +29,9 @@ while loop
 // Global variables
 var wordObjectArray = [];
 var randomNumber;
-var selectedWord;
+var formLabel;
+var formInput;
+var scoreTracker = 0;
 
 // DOM REFERENCES
 var form = document.getElementById('asteroids');
@@ -56,17 +58,25 @@ function randomWord(){
 
 // Function to create form
 function renderWord(){
-  var formLabel = document.createElement('Label');
+  formLabel = document.createElement('Label');
+  formInput = document.createElement('input');
   formLabel.innerHTML = randomWord();
+  formInput.name = 'formName';
   form.appendChild(formLabel);
+  form.appendChild(formInput);
 }
 
-function handleUserInput1(){
-  //check
-  
+function handleUserInput(event){
+  event.preventDefault();
+  var userGuess = event.target.formName.value.toLowerCase();
+  if (userGuess === wordObjectArray[randomNumber].english){
+    scoreTracker++;
+    form.removeChild(formLabel);
+    form.removeChild(formInput);
+  }
 }
 
-form.addEventListener('submit', handleUserInput1);
+form.addEventListener('submit', handleUserInput);
 
 // Instantiate words
 new WordObject('one', 'uno');
@@ -78,17 +88,16 @@ new WordObject('red', 'rojo');
 new WordObject('blue', 'azul');
 new WordObject('green', 'verde');
 new WordObject('yellow', 'amarillo');
-new WordObject('purple', 'purpura');
+new WordObject('purple', 'púrpura');
 new WordObject('car', 'coche');
-new WordObject('bathroom', 'bano');
+new WordObject('bathroom', 'baño');
 new WordObject('please', 'por favor');
 new WordObject('cat', 'gato');
 new WordObject('dog', 'perro');
-new WordObject('yes', 'si');
+new WordObject('yes', 'sí');
 new WordObject('no', 'no');
 new WordObject('hello', 'hola');
-new WordObject('goodbye', 'adios');
+new WordObject('goodbye', 'adiós');
 new WordObject('monkey', 'mono');
-
 
 renderWord();
