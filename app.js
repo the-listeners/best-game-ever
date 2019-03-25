@@ -1,8 +1,10 @@
-// var formSubmitHandler = function (formSubmit) {
-//   formSubmit.preventDefault();
-//   var target = formSubmit.target.otherKey.value;
-//   var pet = formSubmit.target.key.value;
+var testForm = document.getElementById('user_name');
+var formSubmitHandler = function (formSubmit) {
+  formSubmit.preventDefault();
+  var userNameForm = formSubmit.target.username.value;
+  
+};
+ testForm.addEventListener('submit', formSubmitHandler);
 
-// };
-// testForm.addEventListener('submit', formSubmitHandler);
+
 
