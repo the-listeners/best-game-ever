@@ -8,11 +8,11 @@ Joanna Arroyo - CEO/Head of Product
 
 Melissa Stock - Lead Software Engineer
 
-Pratiibh Bassi - Engineer
+Pratiibh Bassi - Technical Lead/Engineer
 
-Williams Argenal - Engineer
+Williams Argenal - Design Lead/Engineer
 
-Denevan Pettie - Engineer
+Denevan Pettie - Research Lead/Engineer
 
 # Our Mission
 Learning a language is a gargantuan and intimidating venture. To make the initial forray more manageable, Learn the Lingo seeks to provide a fun and interactive way to learn a variety of vocabulary words.
