@@ -98,3 +98,11 @@ new WordObject('goodbye', 'adiós');
 new WordObject('monkey', 'mono');
 
 renderWord();
+
+
+
+//===================================================================//
+var user_name; 
+
+console.log(localStorage.getItem('user_name'));
+alert(localStorage.user_name);
