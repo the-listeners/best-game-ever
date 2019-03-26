@@ -12,4 +12,13 @@ var formSubmitHandler = function (formSubmit) {
 };
  testForm.addEventListener('submit', formSubmitHandler);
 
+function aboutMeToggle() {
+  var x = document.getElementById("info");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 
