@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy); 
+@import url(https://fonts.googleapis.com/css?family=Six+Caps);
+@import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
+
+body {
+  background: url(https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif);
+  background-repeat: no-repeat;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.halo {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.intro {
+  color: rgb(207, 151, 208);
+  display: block;
+  font-family: 'Satisfy', cursive;
+  font-size: 32px;
+  text-shadow: 1px 1px black;
+  transform: rotate(-10deg);
+}
+
+.intro--the {
+  transform: rotate(-10deg) translate(-20px, 15px);
+}
+
+.intro--num {
+  background: rgb(240, 200, 160);
+  border: 1px dotted rgb(50, 146, 194);
+  color: rgb(50, 146, 194);
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 4px 6px 2px;
+  position: absolute;
+  text-shadow: none;
+  transform: rotate(-10deg) translate(20px, -25px);
+}
+
+.logo_container {
+  display: inline-block;
+  margin: 25px auto 40px;
+}
+
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 100px;
+  letter-spacing: 10px;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+}
+
+.logo_top {
+  background: linear-gradient(rgb(230, 136, 43), rgb(141, 26, 26));
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: absolute;
+  z-index: 1;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.logo_bot {
+  text-shadow: 
+    2px 1px rgb(110, 0, 108),
+    4px 2px rgb(110, 0, 108),
+    6px 4px rgb(110, 0, 108),
+    8px 5px rgb(110, 0, 108),
+    10px 6px rgb(110, 0, 108),
+    12px 7px rgb(110, 0, 108),
+    14px 8px rgb(110, 0, 108),
+    16px 9px rgba(0, 0, 0, 0.555),
+    18px 10px rgba(0, 0, 0, 0.555),
+    20px 11px rgba(0, 0, 0, 0.555),
+    22px 12px rgba(0, 0, 0, 0.555),
+    24px 13px rgba(0, 0, 0, 0.555);
+}
+
+.sub {
+  color:rgb(241, 207, 250);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+
+.sub-name {
+  margin-left: 1%;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 18px;
+  color:black;
+  text-shadow: -1px 0 rgba(255, 255, 255, 0.767), 0 1px rgba(255, 255, 255, 0.767), 1px 0 rgba(255, 255, 255, 0.767), 0 -1px rgba(255, 255, 255, 0.767);
+}
+
+nav > ul {
+  display: inline-block;
+  margin: 25px auto 40px;
+}
+
+nav > ul > li {
+  float: left;
+  line-height: 70px;
+  margin-right: 70px;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(207, 151, 208);
+}
+
+p {
+  text-align: center;
+}
+
+label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+  color: rgb(207, 151, 208);
+  text-shadow: -1px 0 rgba(135, 206, 250, 0.438), 0 1px rgba(135, 206, 250, 0.438), 1px 0 rgba(135, 206, 250, 0.438), 0 -1px rgba(135, 206, 250, 0.438);
+}
+
+input[value="Enter"] {
+  background:transparent;
+  border: solid;
+  border-color: white;
+  color: rgb(207, 151, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+input#user_name {
+  background: transparent;
+  height: 36px;
+  color: rgb(230, 136, 43);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+}
+
+
+
+
