@@ -1,0 +1,38 @@
+h1 {
+    font-size:54px;
+    text-align: center;
+}
+
+#Spanish {
+    color: crimson;
+    font-size:23px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#English {
+    color: rgba(26, 26, 172, 0.74);
+    font-size:23px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#SpanishTitle {
+    color: crimson;
+    font-size: 46px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#EnglishTitle {
+    color: rgba(26, 26, 172, 0.74);
+    font-size: 46px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    margin: 0 auto;
+}
