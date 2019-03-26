@@ -4,7 +4,6 @@
 
 body {
   background: url(https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif);
-  /* background: url(https://c.pxhere.com/photos/11/f9/space_star_universe_sky_galaxy_blue_background-1200637.jpg!d); */
   background-repeat: no-repeat;
   text-align: center;
   -webkit-background-size: cover;
@@ -14,7 +13,6 @@ body {
 }
 
 .halo {
-  /* background-image: radial-gradient(transparent, rgba(103, 137, 247, 0.884)); */
   bottom: 0;
   left: 0;
   position: fixed;
@@ -120,7 +118,18 @@ nav > ul > li {
   color: rgb(207, 151, 208);
 }
 
-table {
+#gameBackground {
+  height: 400px;
+  width: 960px;
+  position: relative;
   border: 2px solid black;
-  empty-cells: show;
+}
+
+form {
+  height: 40px;
+  width: 200px;
+  position: absolute;
+  border: 2px solid red;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
