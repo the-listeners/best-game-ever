@@ -32,9 +32,14 @@ var randomNumber;
 var formLabel;
 var formInput;
 var scoreTracker = 0;
+var scoresArray = [];
+var stringyScore;
+
 var numOfAsteroids= 6;
 var asteroidsTracker = 0;
 var formArray = [];
+
+var formsLeft = 5;
 
 // DOM REFERENCES
 for(var i = 0; i < numOfAsteroids; i++){
@@ -89,12 +94,10 @@ function renderWord(index){
 var moveAsteroidRight = 0;
 // var movingPart = document.getElementById('movingPart');
 
-//Event handler
-function handleUserInput(event){
-  event.preventDefault();
-  var selector = event.target.id;
-  var userGuess = event.target.formName.value.toLowerCase();
+//Function to check
+function check(selector, userGuess){
   var grabSelectedWordFromFormLable = spanishWordlabel[selector];
+
   for(var i = 0; i < wordObjectArray.length; i++){
     if(grabSelectedWordFromFormLable === wordObjectArray[i].spanish){
       var checkWordObject = wordObjectArray[i];
@@ -102,6 +105,7 @@ function handleUserInput(event){
   }
   if (userGuess === checkWordObject.english){
     scoreTracker++;
+    formsLeft -= 1;
 
     formArray[selector].removeChild(formLabelArray[selector]);
     formArray[selector].removeChild(formInputArray[selector]);
@@ -114,11 +118,43 @@ function handleUserInput(event){
     moveAsteroidRight += 100;
     for(var i = 0; i < formArray.length; i++){
       formArray[i].style.left = moveAsteroidRight + 'px';
-      if(moveAsteroidRight >= 700){
-        moveAsteroidRight -= 100;
-      }
+      // if(moveAsteroidRight >= 700){
+      //   moveAsteroidRight -= 100;
+      // }
     }
   }
+}
+
+
+//Event handler
+function handleUserInput(event){
+  event.preventDefault();
+  var selector = event.target.id;
+  var userGuess = event.target.formName.value.toLowerCase();
+  console.log(formsLeft);
+  if (formsLeft === 0 || moveAsteroidRight > 100){
+    console.log('done');
+    // Store score to local storage
+    console.log(scoreTracker);
+    // debugger;
+    // localStorage.setItem('Score', scoreTracker);
+    if(localStorage.getItem('Score') === null){
+      scoresArray.push(scoreTracker);
+      stringyScore = JSON.stringify(scoresArray);
+      localStorage.setItem('Score', stringyScore);
+    }else{
+      stringyScore = localStorage.getItem('Score');
+      scoresArray = JSON.parse(stringyScore);
+      scoresArray.push(scoreTracker);
+      stringyScore = JSON.stringify(scoresArray);
+      localStorage.setItem('Score', stringyScore);
+    }
+    // TODO: pop up with score
+  } else {
+    check(selector, userGuess);
+  }
+
+
 }
 
 for(var i = 0;  i < formArray.length; i++){
@@ -146,6 +182,7 @@ new WordObject('no', 'no');
 new WordObject('hello', 'hola');
 new WordObject('goodbye', 'adiós');
 new WordObject('monkey', 'mono');
+
 
 for (var i = 0;  i < numOfAsteroids; i++){
   renderWord(i);
