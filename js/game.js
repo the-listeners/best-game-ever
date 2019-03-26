@@ -28,9 +28,14 @@ var randomNumber;
 var formLabel;
 var formInput;
 var scoreTracker = 0;
+var numOfAsteroids= 3;
+var formArray = [];
 
 // DOM REFERENCES
-var form = document.getElementById('asteroids');
+for(var i = 0; i < numOfAsteroids; i++){
+  var form = document.getElementById(i);
+  formArray.push(form);
+}
 
 // Constructor function to create words
 var WordObject = function(english, spanish){
@@ -42,7 +47,6 @@ var WordObject = function(english, spanish){
 // Random number function
 function randomizer(){
   randomNumber = Math.floor(Math.random() * wordObjectArray.length);
-  console.log(randomNumber);
 }
 
 // Generating word for asteroid // TO DO
@@ -53,14 +57,17 @@ function randomWord(){
 }
 
 // Function to create form
-function renderWord(){
+function renderWord(index){
   formLabel = document.createElement('Label');
   formInput = document.createElement('input');
   formLabel.innerHTML = randomWord();
   formInput.name = 'formName';
-  form.appendChild(formLabel);
-  form.appendChild(formInput);
+  formArray[index].appendChild(formLabel);
+  formArray[index].appendChild(formInput);
 }
+
+var moveAsteroidRight = 0;
+// var movingPart = document.getElementById('movingPart');
 
 //Event handler
 function handleUserInput(event){
@@ -70,7 +77,15 @@ function handleUserInput(event){
     scoreTracker++;
     form.removeChild(formLabel);
     form.removeChild(formInput);
-  } // TODO: else goes here
+  } else{
+    moveAsteroidRight += 100;
+    form.style.left = moveAsteroidRight + 'px';
+    console.log(moveAsteroidRight);
+    if(moveAsteroidRight >= 700){
+      moveAsteroidRight -= 100;
+    }
+  }
+
 }
 
 form.addEventListener('submit', handleUserInput);
@@ -97,4 +112,8 @@ new WordObject('hello', 'hola');
 new WordObject('goodbye', 'adiós');
 new WordObject('monkey', 'mono');
 
-renderWord();
+for (var i = 0;  i < numOfAsteroids; i++){
+  renderWord(i);
+}
+
+
