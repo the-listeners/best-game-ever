@@ -12,15 +12,6 @@ body {
   background-size: cover;
 }
 
-.halo {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  pointer-events: none;
-}
-
 .intro {
   color: rgb(207, 151, 208);
   display: block;
@@ -129,6 +120,11 @@ nav > ul > li {
   float: left;
   width: 30%;
   margin: 0% -12% 45px 0%;
+  filter: grayscale(100%);
+}
+
+.member:active {
+filter: grayscale(0%);
 }
 
 .name {
@@ -166,6 +162,8 @@ button {
 footer {
   font-family: 'PT Sans', sans-serif;
   font-size: 18px;
-  padding: 1%;
-  margin: 1%;
+  padding: 10%;
+  margin: 10%;
+  margin-top: -8%;
+  text-align: left;
 }
