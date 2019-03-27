@@ -99,6 +99,8 @@ function check(selector, userGuess){
     scoreTracker++;
     formsLeft -= 1;
 
+    formArray[selector].className = 'mover';
+
     formArray[selector].removeChild(formLabelArray[selector]);
     formArray[selector].removeChild(formInputArray[selector]);
 
