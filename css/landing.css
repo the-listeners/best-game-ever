@@ -12,15 +12,6 @@ body {
   background-size: cover;
 }
 
-.halo {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  pointer-events: none;
-}
-
 .intro {
   color: rgb(207, 151, 208);
   display: block;
@@ -69,7 +60,6 @@ body {
   position: absolute;
   z-index: 1;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
 }
 
 .logo_bot {
@@ -149,6 +139,68 @@ input#user_name {
   font-size: 16px;
 }
 
+#languageSelection {
+  background:transparent;
+  border: solid;
+  height: 53px;
+  border-color: white;
+  color: rgb(207, 151, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+option {
+  display: none;
+  position: absolute;
+  border-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(255, 255, 255);
+  z-index: 1;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+option[value="spanish"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
+option[value="french"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
+/* #languageSelection:hover {
+  background-color: rgb(230, 136, 43);
+} */
+
+a { 
+  color:rgb(110, 0, 108);
+}
+
+a:visited { 
+  text-decoration: none; color:rgb(110, 0, 108); 
+}
+
+a:hover { 
+  text-decoration: none; color:rgb(230, 136, 43); 
+}
+
+a:focus { 
+  text-decoration: none; color:goldenrod; 
+}
+
+a:hover, a:active { 
+  text-decoration: none; color:gold 
+}
 
 
 

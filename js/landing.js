@@ -49,6 +49,3 @@ function aboutMeToggle() {
     x.style.display = "none";
   }
 }
-
-
- 
