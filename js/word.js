@@ -38,6 +38,3 @@ new WordObject('no', 'no', 'non');
 new WordObject('hello', 'hola', 'bonjour');
 new WordObject('goodbye', 'adiós', 'au revoir');
 new WordObject('monkey', 'mono', 'singe');
-
-// Stores word array to local storage
-storeWordArray();

@@ -1,8 +1,5 @@
 'use strict'
 
-console.log('testing!');
-
-
 // Global variables
 var userArray = [];
 var stringyUser;
@@ -37,6 +34,9 @@ var formSubmitHandler = function (formSubmit) {
 
 // Username submit listener
 testForm.addEventListener('submit', formSubmitHandler);
+
+// Stores word array to local storage
+storeWordArray();
 
 // ===========================================================//
 // Toggle about me

@@ -1,7 +1,6 @@
 'use strict';
 
 // Global variables
-
 var prevNumArray = [];
 var tempNumArray = [];
 var spanishWordlabel = [];
@@ -9,8 +8,6 @@ var formInputArray = [];
 var formLabelArray = [];
 
 var randomNumber;
-
-var language;
 
 var formLabel;
 var formInput;
@@ -30,6 +27,16 @@ for(var i = 0; i < numOfAsteroids; i++){
   formArray.push(form);
 }
 
+// Retrieves language:
+var language = localStorage.getItem('language');
+
+// Retrieves word array
+var stringyWordArray = localStorage.getItem('wordArray');
+var wordObjectArray = JSON.parse(stringyWordArray);
+
+console.log(language);
+console.log(wordObjectArray);
+
 // Random number function
 function randomizer(){
   do{
@@ -43,8 +50,6 @@ function randomizer(){
 // Generating word for asteroid // TO DO
 function randomWord(){
   var numSelected = randomizer();
-
-  language = localStorage.getItem('language');
   var selectedWord;
 
   if(language === 'spanish'){
