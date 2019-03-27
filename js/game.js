@@ -6,8 +6,10 @@ var tempNumArray = [];
 var spanishWordlabel = [];
 var formInputArray = [];
 var formLabelArray = [];
+var highScoresArray = [];
 
 var randomNumber;
+var numHighScoreDisplayed = 5;
 
 var formLabel;
 var formInput;
@@ -21,6 +23,7 @@ var asteroidsTracker = 0;
 var formArray = [];
 
 var formsLeft = 5;
+var moveAsteroidRight = 0;
 
 // DOM REFERENCES
 for(var i = 0; i < numOfAsteroids; i++){
@@ -45,7 +48,7 @@ function randomizer(){
   return randomNumber;
 }
 
-// Generating word for asteroid // TO DO
+// Generating word for asteroid
 function randomWord(){
   var numSelected = randomizer();
   var selectedWord;
@@ -81,9 +84,6 @@ function renderWord(index){
   formArray[index].appendChild(formInput);
 }
 
-var moveAsteroidRight = 0;
-// var movingPart = document.getElementById('movingPart');
-
 //Function to check
 function check(selector, userGuess){
   var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
@@ -95,7 +95,7 @@ function check(selector, userGuess){
   }
 
   if (userGuess === checkWordObject.english){
-    scoreTracker++;
+    scoreTracker = scoreTracker + 1000;
     formsLeft -= 1;
     formArray[selector].className = 'mover';
 
@@ -122,12 +122,8 @@ function handleUserInput(event){
   event.preventDefault();
   var selector = event.target.id;
   var userGuess = event.target.formName.value.toLowerCase();
-  console.log(formsLeft);
   if (formsLeft === 0 || moveAsteroidRight > 100){
-    console.log('done');
     // Store score to local storage
-    console.log(scoreTracker);
-    // localStorage.setItem('Score', scoreTracker);
     userScore = scoreTracker;
     stringyScore = JSON.stringify(userScore);
     localStorage.setItem('Score', stringyScore);
@@ -150,27 +146,21 @@ function handleUserInput(event){
       stringyResultsArray = JSON.stringify(userResultsObjArray);
       localStorage.setItem('Results', stringyResultsArray);
     }
-    // TODO: pop up with score
+    endGame();
     getHighScores();
     buildHeader();
-    for(var i = 0; i < 5; i++){
+    for(var i = 0; i < numHighScoreDisplayed; i++){
       addRow(i);
     }
+    playAgain();
   } else {
     check(selector, userGuess);
   }
-
-
 }
 
 for(var i = 0; i < formArray.length; i++){
   formArray[i].addEventListener('submit', handleUserInput);
 }
-
-
-var user_name;
-
-// alert(localStorage.user_name);
 
 // Loop to render all words into array and stores it
 for (var i = 0; i < numOfAsteroids; i++){
@@ -214,21 +204,31 @@ function addRow(index) {
   scoreBoardTable.appendChild(next_tr);
 }
 
-
-var highScoresArray = [];
-
 //Constructor for User Results
 var UserResultsObject = function(userName, score){
   this.userName = userName;
   this.score = score;
 };
 
-
 //function that collects highest scores
-
 function getHighScores() {
   highScoresArray = [];
   userResultsObjArray.sort(function(a, b){return b.score - a.score});
-  highScoresArray = userResultsObjArray.slice(0, 6);
-  console.log(highScoresArray);
+  highScoresArray = userResultsObjArray.slice(0, numHighScoreDisplayed + 1);
+}
+
+function endGame() {
+  var removeGame = document.getElementById('gameBackground').remove();
+  // removeGame.visibility = hidden;
+  for(var i = 0; i < formArray.length; i++){
+    formArray[i].removeEventListener('submit', handleUserInput);
+  }
+}
+
+function playAgain(){
+  var endOfGameOptions = document.getElementById('endGame');
+  var playAgainLink = document.createElement('a');
+  playAgainLink.href='../index.html';
+  playAgainLink.textContent = 'Play Again?';
+  endOfGameOptions.appendChild(playAgainLink);
 }

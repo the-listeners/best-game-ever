@@ -25,7 +25,6 @@ var formSubmitHandler = function (formSubmit) {
   // Storing language chosen to local storage
   var languageChosen = formSubmit.target.languageSelection.value;
   localStorage.setItem('language', languageChosen);
-  redirect();
 };
 
 
@@ -45,15 +44,11 @@ function aboutMeToggle() {
   } else {
     x.style.display = "none";
   }
-
 }
-
 
  // ===========================================================//
 // chet moving around after clicking enter
 // ===========================================================//
-
-
 
 function myMove() {
   var elem = document.getElementById("myAnimation");   
@@ -70,6 +65,10 @@ function myMove() {
   }
 }
 
+// redirects when
+function redirect(){
+  window.location.href="pages/game.html";
+}
 
 
 
