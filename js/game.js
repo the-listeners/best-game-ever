@@ -1,28 +1,7 @@
 'use strict';
 
-
-//This is where are the start button is being modified
-var startButton = document.getElementById('startButton');
-
-function handleStartGame(){
-  console.log('The game has begun!');
-}
-
-startButton.addEventListener('click', handleStartGame);
-
-/*
-PLANNING:
-
-Store words
-  Constructor function for word objects
-  Array of word objects?
-Function to check word inputted with objects
-Instantiate word objects
-while loop
-
-*/
 // Global variables
-var wordObjectArray = [];
+
 var prevNumArray = [];
 var tempNumArray = [];
 var spanishWordlabel = [];
@@ -50,14 +29,6 @@ for(var i = 0; i < numOfAsteroids; i++){
   var form = document.getElementById(i);
   formArray.push(form);
 }
-
-// Constructor function to create words
-var WordObject = function(english, spanish, french){
-  this.english = english;
-  this.spanish = spanish;
-  this.french = french;
-  wordObjectArray.push(this);
-};
 
 // Random number function
 function randomizer(){
@@ -103,12 +74,6 @@ function renderWord(index){
   formInput.name = 'formName';
   formArray[index].appendChild(formLabel);
   formArray[index].appendChild(formInput);
-}
-
-// Function to store all word objects to local storage
-function storeWordArray(){
-  var stringyWordArray = JSON.stringify(wordObjectArray);
-  localStorage.setItem('wordArray', stringyWordArray);
 }
 
 var moveAsteroidRight = 0;
@@ -183,28 +148,6 @@ for(var i = 0; i < formArray.length; i++){
   formArray[i].addEventListener('submit', handleUserInput);
 }
 
-// Instantiate words
-new WordObject('one', 'uno', 'un');
-new WordObject('two', 'dos', 'deux');
-new WordObject('three', 'tres', 'trois');
-new WordObject('four', 'quatro', 'quatre');
-new WordObject('five', 'cinco', 'cinq');
-new WordObject('red', 'rojo', 'six');
-new WordObject('blue', 'azul', 'bleu');
-new WordObject('green', 'verde', 'vert');
-new WordObject('yellow', 'amarillo', 'jaune');
-new WordObject('purple', 'púrpura', 'violet');
-new WordObject('car', 'coche', 'voiture');
-new WordObject('bathroom', 'baño', 'salle de bains');
-new WordObject('please', 'por favor', 's \'il vous plait');
-new WordObject('cat', 'gato', 'chat');
-new WordObject('dog', 'perro', 'chien');
-new WordObject('yes', 'sí', 'oui');
-new WordObject('no', 'no', 'non');
-new WordObject('hello', 'hola', 'bonjour');
-new WordObject('goodbye', 'adiós', 'au revoir');
-new WordObject('monkey', 'mono', 'singe');
-
 
 var user_name;
 
@@ -215,10 +158,6 @@ console.log(localStorage.getItem('user_name'));
 for (var i = 0;  i < numOfAsteroids; i++){
   renderWord(i);
 }
-
-// Stores word array to local storage
-storeWordArray();
-
 
 // Table for score
 
