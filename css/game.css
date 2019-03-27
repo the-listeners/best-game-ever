@@ -108,8 +108,16 @@ nav > ul > li {
   color: rgb(207, 151, 208);
 }
 
+main {
+  background: no-repeat;
+  background-image: url(/css/planet.png);
+  /* background-size: 500px; */
+  background-position-x: 100%;
+
+}
+
 #gameBackground {
-  height: 400px;
+  height: 600px;
   width: 960px;
   position: relative;
   border: 2px solid black;
@@ -117,8 +125,6 @@ nav > ul > li {
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  /* background: url(/css/asteroid.png); */
-
 }
 
 [id='0'] {
@@ -181,7 +187,6 @@ input {
   margin-left: 1%;
   width: 20%;
   border: 1px solid white;
-  /* outline: none; */
   color: white;
   font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
@@ -193,14 +198,12 @@ input#startbutton {
 
 
 .mover {
-  /* position: static; */
   animation-name: example;
   animation-duration: 6s;
-  /* animation-delay: 3s; */
   animation-fill-mode: both;   
 }
 
 @keyframes example {
-  from {top: 0px; left: 0px;} 
-  to {top: 400px; right: 0px;} 
+  99% {top: -500px; left: 1000px; opacity: 100;} 
+  100% {top: -500px; left: 1000px; opacity: 0;} 
 }
