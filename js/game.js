@@ -35,9 +35,6 @@ var language = localStorage.getItem('language');
 var stringyWordArray = localStorage.getItem('wordArray');
 var wordObjectArray = JSON.parse(stringyWordArray);
 
-console.log(language);
-console.log(wordObjectArray);
-
 // Random number function
 function randomizer(){
   do{
@@ -57,6 +54,8 @@ function randomWord(){
     selectedWord = wordObjectArray[numSelected].spanish;
   } else if(language === 'french'){
     selectedWord = wordObjectArray[numSelected].french;
+  } else if(language === 'latvian'){
+    selectedWord = wordObjectArray[numSelected].latvian;
   }
 
   asteroidsTracker++;
@@ -90,7 +89,7 @@ function check(selector, userGuess){
   var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french){
+    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian){
       var checkWordObject = wordObjectArray[i];
     }
   }
@@ -179,12 +178,10 @@ for (var i = 0; i < numOfAsteroids; i++){
   renderWord(i);
 }
 
-// Stores word array to local storage
-storeWordArray();
-
 var tableHeaderArray = ['Rank', 'User Name', 'Score'];
 var rankArray = ['#1', '#2', '#3', '#4', '#5'];
 var userResultsObjArray = [];
+
 
 // Table for score
 var scoreBoardTable = document.getElementById('scoreBoard');

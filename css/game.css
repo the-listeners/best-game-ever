@@ -1,4 +1,4 @@
-/* @import url(https://fonts.googleapis.com/css?family=Satisfy); 
+@import url(https://fonts.googleapis.com/css?family=Satisfy); 
 @import url(https://fonts.googleapis.com/css?family=Six+Caps);
 @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
 
@@ -121,12 +121,24 @@ nav > ul > li {
 
 }
 
-form {
-  /* height: 400px; */ /*
+[id='0'] {
+  height: 100px;
+  width: 300px;
   position: absolute;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  /* background: url(/css/asteroid.png); */ /*
+  background-image: url(/css/asteroid.png);
+  background-size: 500px;
+  background-position: left;
+}
+
+[id='1'] {
+  height: 80px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  padding-top: 25px;
+  background-image: url(/css/asteroid.png);
+  background-size: 500px;
+  background-position: -80px;
 }
 
 input {

@@ -7,6 +7,11 @@ var stringyUser;
 // DOM references
 var testForm = document.getElementById('user_input');
 
+// redirects when
+function redirect(){
+  window.location.href='pages/game.html';
+}
+
 // Event handler for username and language selection
 var formSubmitHandler = function (formSubmit) {
   formSubmit.preventDefault();
@@ -22,6 +27,7 @@ var formSubmitHandler = function (formSubmit) {
   localStorage.setItem('language', languageChosen);
   redirect();
 };
+
 
 // Username submit listener
 testForm.addEventListener('submit', formSubmitHandler);
@@ -64,12 +70,6 @@ function myMove() {
   }
 }
 
-
-// redirects when
-function redirect()
-{
-    window.location.href="pages/game.html";
-}
 
 
 
