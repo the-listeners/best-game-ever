@@ -3,11 +3,12 @@
 
 //This is where are the start button is being modified
 var startButton = document.getElementById('startButton');
-startButton.addEventListener('click', handleStartGame);
 
 function handleStartGame(){
   console.log('The game has begun!');
 }
+
+startButton.addEventListener('click', handleStartGame);
 
 /*
 PLANNING:
@@ -29,6 +30,9 @@ var formInputArray = [];
 var formLabelArray = [];
 
 var randomNumber;
+
+var language;
+
 var formLabel;
 var formInput;
 var scoreTracker = 0;
@@ -69,7 +73,7 @@ function randomizer(){
 function randomWord(){
   var numSelected = randomizer();
 
-  var language = localStorage.getItem('language');
+  language = localStorage.getItem('language');
   var selectedWord;
 
   if(language === 'spanish'){
@@ -99,6 +103,12 @@ function renderWord(index){
   formInput.name = 'formName';
   formArray[index].appendChild(formLabel);
   formArray[index].appendChild(formInput);
+}
+
+// Function to store all word objects to local storage
+function storeWordArray(){
+  var stringyWordArray = JSON.stringify(wordObjectArray);
+  localStorage.setItem('wordArray', stringyWordArray);
 }
 
 var moveAsteroidRight = 0;
@@ -200,11 +210,17 @@ var user_name;
 
 console.log(localStorage.getItem('user_name'));
 // alert(localStorage.user_name);
-for (var i = 0;  i < numOfAsteroids; i++){
 
+// Loop to render all words into array and stores it
+for (var i = 0;  i < numOfAsteroids; i++){
   renderWord(i);
 }
 
+// Stores word array to local storage
+storeWordArray();
+
+
+// Table for score
 
 var table_El = document.getElementById('scoreBoard');
 function buildHeader() {
