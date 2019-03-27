@@ -3,7 +3,7 @@
 
 //This is where are the start button is being modified
 var startButton = document.getElementById('startButton');
-startButton.addEventListener("click", handleStartGame);
+startButton.addEventListener('click', handleStartGame);
 
 function handleStartGame(){
   console.log('The game has begun!');
@@ -150,6 +150,8 @@ function handleUserInput(event){
       localStorage.setItem('Score', stringyScore);
     }
     // TODO: pop up with score
+    buildHeader();
+    addRow();
   } else {
     check(selector, userGuess);
   }
@@ -157,7 +159,7 @@ function handleUserInput(event){
 
 }
 
-for(var i = 0;  i < formArray.length; i++){
+for(var i = 0; i < formArray.length; i++){
   formArray[i].addEventListener('submit', handleUserInput);
 }
 
@@ -184,11 +186,40 @@ new WordObject('goodbye', 'adiós');
 new WordObject('monkey', 'mono');
 
 
-var user_name; 
+var user_name;
 
 console.log(localStorage.getItem('user_name'));
 // alert(localStorage.user_name);
 for (var i = 0;  i < numOfAsteroids; i++){
+
   renderWord(i);
+}
+
+
+var table_El = document.getElementById('scoreBoard');
+function buildHeader() {
+  var tr_El = document.createElement('tr');
+  var tdOne_El = document.createElement('td');
+  tdOne_El.textContent = 'rank';
+  var tdTwo_El = document.createElement('td');
+  tdTwo_El.textContent = 'username';
+  var tdThree_El = document.createElement('td');
+  tdThree_El.textContent = 'score';
+  tr_El.appendChild(tdOne_El);
+  tr_El.appendChild(tdTwo_El);
+  tr_El.appendChild(tdThree_El);
+  table_El.appendChild(tr_El);
+}
+
+function addRow() {
+  for(var i = 0; i < 5; i++){
+    var next_tr = document.createElement('tr');
+    for(var j = 0; j < 3; j++){
+      var next_td = document.createElement('td');
+      next_td.textContent = scoresArray[i];
+      next_tr.appendChild(next_td);
+    }
+    table_El.appendChild(next_tr);
+  }
 }
 
