@@ -118,7 +118,7 @@ label {
   text-shadow: -1px 0 rgba(135, 206, 250, 0.438), 0 1px rgba(135, 206, 250, 0.438), 1px 0 rgba(135, 206, 250, 0.438), 0 -1px rgba(135, 206, 250, 0.438);
 }
 
-input[value="Enter"] {
+input[value="Lets Play!"] {
   background:transparent;
   border: solid;
   border-color: white;
@@ -173,6 +173,12 @@ option[value="spanish"]{
 }
 
 option[value="french"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
+option[value="latvian"]{
   color: rgb(255, 255, 255);
   padding: 12px 16px;
   display: block;

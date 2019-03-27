@@ -39,6 +39,8 @@ for (var i = 0; i < wordObjectArray.length; i++){
     otherLanguageCell.textContent = wordObjectArray[i].spanish;
   } else if(language === 'french'){
     otherLanguageCell.textContent = wordObjectArray[i].french;
+  } else if(language === 'latvian'){
+    otherLanguageCell.textContent = wordObjectArray[i].latvian;
   }
   tableRow.appendChild(otherLanguageCell);
 
