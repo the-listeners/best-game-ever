@@ -16,7 +16,7 @@ var userScore;
 var stringyScore;
 var stringyResultsArray = [];
 
-var numOfAsteroids= 6;
+var numOfAsteroids= 5;
 var asteroidsTracker = 0;
 var formArray = [];
 
@@ -97,7 +97,6 @@ function check(selector, userGuess){
   if (userGuess === checkWordObject.english){
     scoreTracker++;
     formsLeft -= 1;
-
     formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);

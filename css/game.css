@@ -122,28 +122,66 @@ nav > ul > li {
 }
 
 [id='0'] {
-  height: 100px;
-  width: 300px;
+  height: 65px;
+  width: 400px;
   position: absolute;
-  background-image: url(/css/asteroid.png);
-  background-size: 500px;
-  background-position: left;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
 }
 
 [id='1'] {
-  height: 80px;
+  height: 65px;
   width: 400px;
   position: absolute;
   top: 100px;
-  padding-top: 25px;
-  background-image: url(/css/asteroid.png);
-  background-size: 500px;
-  background-position: -80px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
 }
+
+[id='2'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 200px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
+[id='3'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 300px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
+[id='4'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 400px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
 
 input {
   background: transparent;
+  margin-left: 1%;
+  width: 20%;
   border: 1px solid white;
+  /* outline: none; */
   color: white;
   font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
@@ -157,15 +195,12 @@ input#startbutton {
 .mover {
   /* position: static; */
   animation-name: example;
-  animation-duration: 3s;
+  animation-duration: 6s;
   /* animation-delay: 3s; */
   animation-fill-mode: both;   
 }
 
-
-
-
 @keyframes example {
-  from {bottom: 0px; right: 0px;} 
-  to {bottom: 400px; right: 400px;} 
+  from {top: 0px; left: 0px;} 
+  to {top: 400px; right: 0px;} 
 }
