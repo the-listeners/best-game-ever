@@ -18,7 +18,7 @@ var userScore;
 var stringyScore;
 var stringyResultsArray = [];
 
-var numOfAsteroids= 6;
+var numOfAsteroids= 5;
 var asteroidsTracker = 0;
 var formArray = [];
 
@@ -57,6 +57,8 @@ function randomWord(){
     selectedWord = wordObjectArray[numSelected].spanish;
   } else if(language === 'french'){
     selectedWord = wordObjectArray[numSelected].french;
+  } else if(language === 'latvian'){
+    selectedWord = wordObjectArray[numSelected].latvian;
   }
 
   asteroidsTracker++;
@@ -87,7 +89,7 @@ function check(selector, userGuess){
   var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french){
+    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian){
       var checkWordObject = wordObjectArray[i];
     }
   }
@@ -95,7 +97,6 @@ function check(selector, userGuess){
   if (userGuess === checkWordObject.english){
     scoreTracker = scoreTracker + 1000;
     formsLeft -= 1;
-
     formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);
