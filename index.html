@@ -37,18 +37,19 @@
       <p>
         <form id="user_input" autocomplete="off">
           <label for="user_name"> User Name  
-            <input autocomplete="false" name="hidden" type="text" style="display:none;">
+            <input autocomplete="false" name="hidden" type="text" style="display:none;" required="required">
             <input name="userName" type="" id="user_name"> 
           </label>
           <select id="languageSelection">
             <option value="spanish">Spanish</option>
             <option value="french">French</option>
           </select>
-          <input type="submit" value="Enter">
+          <input type="submit" value="Enter" required="required">
       </p>
     </main>
     <footer></footer>
     
+    <script src="js/word.js"></script>
     <script src="js/landing.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Satisfy); 
+/* @import url(https://fonts.googleapis.com/css?family=Satisfy); 
 @import url(https://fonts.googleapis.com/css?family=Six+Caps);
 @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
 
@@ -118,14 +118,15 @@ nav > ul > li {
   font-size: 14px;
   text-transform: uppercase;
   /* background: url(/css/asteroid.png); */
+
 }
 
 form {
-  /* height: 400px; */
+  /* height: 400px; */ /*
   position: absolute;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* background: url(/css/asteroid.png); */
+  /* background: url(/css/asteroid.png); */ /*
 }
 
 input {
@@ -139,5 +140,5 @@ input {
 input#startbutton {
   color: white;
 }
-
+*/
 
