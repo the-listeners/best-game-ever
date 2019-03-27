@@ -162,3 +162,10 @@ button {
   font-size: 10px;
   font-family: 'Press Start 2P', cursive;
 }
+
+footer {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 18px;
+  padding: 1%;
+  margin: 1%;
+}

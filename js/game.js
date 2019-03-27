@@ -189,8 +189,9 @@ new WordObject('monkey', 'mono');
 var user_name;
 
 console.log(localStorage.getItem('user_name'));
-alert(localStorage.user_name);
-for (var i = 0; i < numOfAsteroids; i++){
+// alert(localStorage.user_name);
+for (var i = 0;  i < numOfAsteroids; i++){
+
   renderWord(i);
 }
 
