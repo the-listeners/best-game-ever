@@ -48,9 +48,10 @@ for(var i = 0; i < numOfAsteroids; i++){
 }
 
 // Constructor function to create words
-var WordObject = function(english, spanish){
+var WordObject = function(english, spanish, french){
   this.english = english;
   this.spanish = spanish;
+  this.french = french;
   wordObjectArray.push(this);
 };
 
@@ -67,7 +68,16 @@ function randomizer(){
 // Generating word for asteroid // TO DO
 function randomWord(){
   var numSelected = randomizer();
-  var selectedWord = wordObjectArray[numSelected].spanish;
+
+  var language = localStorage.getItem('language');
+  var selectedWord;
+
+  if(language === 'spanish'){
+    selectedWord = wordObjectArray[numSelected].spanish;
+  } else if(language === 'french'){
+    selectedWord = wordObjectArray[numSelected].french;
+  }
+
   asteroidsTracker++;
 
   if(asteroidsTracker === numOfAsteroids){
@@ -96,13 +106,14 @@ var moveAsteroidRight = 0;
 
 //Function to check
 function check(selector, userGuess){
-  var grabSelectedWordFromFormLable = spanishWordlabel[selector];
+  var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLable === wordObjectArray[i].spanish){
+    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french){
       var checkWordObject = wordObjectArray[i];
     }
   }
+
   if (userGuess === checkWordObject.english){
     scoreTracker++;
     formsLeft -= 1;
@@ -124,7 +135,6 @@ function check(selector, userGuess){
     }
   }
 }
-
 
 //Event handler
 function handleUserInput(event){
@@ -164,26 +174,26 @@ for(var i = 0; i < formArray.length; i++){
 }
 
 // Instantiate words
-new WordObject('one', 'uno');
-new WordObject('two', 'dos');
-new WordObject('three', 'tres');
-new WordObject('four', 'quatro');
-new WordObject('five', 'cinco');
-new WordObject('red', 'rojo');
-new WordObject('blue', 'azul');
-new WordObject('green', 'verde');
-new WordObject('yellow', 'amarillo');
-new WordObject('purple', 'púrpura');
-new WordObject('car', 'coche');
-new WordObject('bathroom', 'baño');
-new WordObject('please', 'por favor');
-new WordObject('cat', 'gato');
-new WordObject('dog', 'perro');
-new WordObject('yes', 'sí');
-new WordObject('no', 'no');
-new WordObject('hello', 'hola');
-new WordObject('goodbye', 'adiós');
-new WordObject('monkey', 'mono');
+new WordObject('one', 'uno', 'un');
+new WordObject('two', 'dos', 'deux');
+new WordObject('three', 'tres', 'trois');
+new WordObject('four', 'quatro', 'quatre');
+new WordObject('five', 'cinco', 'cinq');
+new WordObject('red', 'rojo', 'six');
+new WordObject('blue', 'azul', 'bleu');
+new WordObject('green', 'verde', 'vert');
+new WordObject('yellow', 'amarillo', 'jaune');
+new WordObject('purple', 'púrpura', 'violet');
+new WordObject('car', 'coche', 'voiture');
+new WordObject('bathroom', 'baño', 'salle de bains');
+new WordObject('please', 'por favor', 's \'il vous plait');
+new WordObject('cat', 'gato', 'chat');
+new WordObject('dog', 'perro', 'chien');
+new WordObject('yes', 'sí', 'oui');
+new WordObject('no', 'no', 'non');
+new WordObject('hello', 'hola', 'bonjour');
+new WordObject('goodbye', 'adiós', 'au revoir');
+new WordObject('monkey', 'mono', 'singe');
 
 
 var user_name;

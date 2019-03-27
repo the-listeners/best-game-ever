@@ -1,18 +1,21 @@
 'use strict'
 
 console.log('testing!');
+
+
+// Global variables
 var userArray = [];
 var stringyUser;
 
-
+// DOM references
 var testForm = document.getElementById('user_input');
+
+// Event handler for username and language selection
 var formSubmitHandler = function (formSubmit) {
   formSubmit.preventDefault();
-  console.log(formSubmit);
 
-  
+  // Storing username to local storage
   var userNameForm = formSubmit.target.user_name.value;
-
   if (localStorage.getItem('user') === null){
     userArray.push(userNameForm);
     stringyUser = JSON.stringify(userArray);
@@ -24,36 +27,19 @@ var formSubmitHandler = function (formSubmit) {
     userArray.push(userNameForm);
     stringyUser = JSON.stringify(userArray);
     localStorage.setItem('user', stringyUser);
-    
   }
 
+  // Storing language chosen to local storage
+  var languageChosen = formSubmit.target.languageSelection.value;
+  localStorage.setItem('language', languageChosen);
 
-
-
-  console.log([userNameForm]);
-  
-  
-  
 };
- testForm.addEventListener('submit', formSubmitHandler);
- 
 
+// Username submit listener
+testForm.addEventListener('submit', formSubmitHandler);
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
 // ===========================================================//
-       // Toggle about mee//
+// Toggle about me
 // ===========================================================//
 function aboutMeToggle() {
   var x = document.getElementById("info");
