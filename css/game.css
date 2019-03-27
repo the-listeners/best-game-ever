@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Satisfy); 
+/* @import url(https://fonts.googleapis.com/css?family=Satisfy); 
 @import url(https://fonts.googleapis.com/css?family=Six+Caps);
 @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
 
@@ -10,15 +10,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.halo {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  pointer-events: none;
 }
 
 .intro {
@@ -69,7 +60,6 @@ body {
   position: absolute;
   z-index: 1;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
 }
 
 .logo_bot {
@@ -124,29 +114,33 @@ nav > ul > li {
   position: relative;
   border: 2px solid black;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'PT Sans', sans-serif;
   font-size: 14px;
+  text-transform: uppercase;
   /* background: url(/css/asteroid.png); */
+
 }
 
 form {
-  /* height: 400px; */
+  /* height: 400px; */ /*
   position: absolute;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* background: url(/css/asteroid.png); */
+  /* background: url(/css/asteroid.png); */ /*
 }
 
 input {
   background: transparent;
   border: 1px solid white;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
 }
 
 input#startbutton {
   color: white;
 }
+
 
 .mover {
   /* position: static; */
@@ -155,6 +149,9 @@ input#startbutton {
   /* animation-delay: 3s; */
   animation-fill-mode: both;   
 }
+
+
+
 
 @keyframes example {
   from {bottom: 0px; right: 0px;} 
