@@ -181,8 +181,11 @@ function handleUserInput(event){
       localStorage.setItem('Results', stringyResultsArray);
     }
     // TODO: pop up with score
+    getHighScores();
     buildHeader();
-    addRow();
+    for(var i = 0; i < 5; i++){
+      addRow(i);
+    }
   } else {
     check(selector, userGuess);
   }
@@ -246,20 +249,20 @@ function buildHeader() {
   scoreBoardTable.appendChild(header_tr);
 }
 
-function addRow() {
+function addRow(index) {
 
   var next_tr = document.createElement('tr');
 
   var rank_td = document.createElement('td');
-  rank_td.textContent = rankArray[0];
+  rank_td.textContent = rankArray[index];
   next_tr.appendChild(rank_td);
 
   var userName_td = document.createElement('td');
-  userName_td.textContent = userResultsObjArray[0].userName;
+  userName_td.textContent = highScoresArray[index].userName;
   next_tr.appendChild(userName_td);
 
   var score_td = document.createElement('td');
-  score_td.textContent = userResultsObjArray[0].score;
+  score_td.textContent = highScoresArray[index].score;
   next_tr.appendChild(score_td);
 
   scoreBoardTable.appendChild(next_tr);
@@ -272,7 +275,6 @@ var highScoresArray = [];
 var UserResultsObject = function(userName, score){
   this.userName = userName;
   this.score = score;
-
 };
 
 
@@ -280,6 +282,7 @@ var UserResultsObject = function(userName, score){
 
 function getHighScores() {
   highScoresArray = [];
-  userResultsObjArray.sort(function(a, b){return a.score - b.score});
+  userResultsObjArray.sort(function(a, b){return b.score - a.score});
   highScoresArray = userResultsObjArray.slice(0, 6);
+  console.log(highScoresArray);
 }
