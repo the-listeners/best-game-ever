@@ -4,7 +4,7 @@ console.log('testing!');
 
 
 // Global variables
-var userArray = [];
+var userName;
 var stringyUser;
 
 // DOM references
@@ -16,18 +16,9 @@ var formSubmitHandler = function (formSubmit) {
 
   // Storing username to local storage
   var userNameForm = formSubmit.target.user_name.value;
-  if (localStorage.getItem('user') === null){
-    userArray.push(userNameForm);
-    stringyUser = JSON.stringify(userArray);
-    localStorage.setItem('user', stringyUser);
-
-  } else{
-    stringyUser = localStorage.getItem('user');
-    userArray = JSON.parse(stringyUser);
-    userArray.push(userNameForm);
-    stringyUser = JSON.stringify(userArray);
-    localStorage.setItem('user', stringyUser);
-  }
+  userName = userNameForm;
+  stringyUser = JSON.stringify(userName);
+  localStorage.setItem('user', stringyUser);
 
   // Storing language chosen to local storage
   var languageChosen = formSubmit.target.languageSelection.value;
