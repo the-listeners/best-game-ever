@@ -128,6 +128,8 @@ function check(selector, userGuess){
     scoreTracker++;
     formsLeft -= 1;
 
+    formArray[selector].className = 'mover';
+
     formArray[selector].removeChild(formLabelArray[selector]);
     formArray[selector].removeChild(formInputArray[selector]);
 
@@ -212,7 +214,7 @@ console.log(localStorage.getItem('user_name'));
 // alert(localStorage.user_name);
 
 // Loop to render all words into array and stores it
-for (var i = 0;  i < numOfAsteroids; i++){
+for (var i = 0; i < numOfAsteroids; i++){
   renderWord(i);
 }
 

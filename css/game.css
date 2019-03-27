@@ -148,4 +148,15 @@ input#startbutton {
   color: white;
 }
 
+.mover {
+  /* position: static; */
+  animation-name: example;
+  animation-duration: 3s;
+  /* animation-delay: 3s; */
+  animation-fill-mode: both;   
+}
 
+@keyframes example {
+  from {bottom: 0px; right: 0px;} 
+  to {bottom: 400px; right: 400px;} 
+}
