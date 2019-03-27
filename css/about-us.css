@@ -123,10 +123,13 @@ nav > ul > li {
   filter: grayscale(100%);
 }
 
-.member:active {
+.member:hover {
 filter: grayscale(0%);
 }
 
+.member:active {
+  filter: grayscale(0%);
+}
 .name {
   bottom: 0px;
   color: rgb(207, 151, 208);
