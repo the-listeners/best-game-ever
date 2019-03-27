@@ -99,7 +99,7 @@ function check(selector, userGuess){
     scoreTracker++;
     formsLeft -= 1;
 
-    formArray[selector].className = 'mover';
+    // formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);
     formArray[selector].removeChild(formInputArray[selector]);
@@ -232,7 +232,7 @@ var UserResultsObject = function(userName, score){
 
 function getHighScores() {
   highScoresArray = [];
-  userResultsObjArray.sort(function(a, b){return b.score - a.score});
+  userResultsObjArray.sort(function(a, b){return b.score - a.score;});
   highScoresArray = userResultsObjArray.slice(0, 6);
   console.log(highScoresArray);
 }
