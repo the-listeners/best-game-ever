@@ -123,14 +123,29 @@ nav > ul > li {
   width: 960px;
   position: relative;
   border: 2px solid black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  /* background: url(/css/asteroid.png); */
 }
 
 form {
-  height: 40px;
-  width: 200px;
+  /* height: 400px; */
   position: absolute;
-  border: 2px solid red;
   margin-top: 70px;
   margin-bottom: 70px;
+  /* background: url(/css/asteroid.png); */
 }
+
+input {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+input#startbutton {
+  color: white;
+}
+
 
