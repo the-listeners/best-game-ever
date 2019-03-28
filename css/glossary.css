@@ -152,3 +152,7 @@ table {
     font-family: 'PT Sans', sans-serif;
     font-size: 18px;
 }
+
+footer {
+  height: 400px;
+}
