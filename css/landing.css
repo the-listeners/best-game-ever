@@ -221,6 +221,12 @@ option[value="snakes"]{
   display: block;
 }
 
+option[value="cat"]{
+  color: rgb(207, 151, 208);
+  padding: 12px 16px;
+  display: block;
+}
+
 /* #languageSelection:hover {
   background-color: rgb(230, 136, 43);
 } */
@@ -253,12 +259,6 @@ a:hover, a:active {
 
   /* ==== Animation for the spiny rock ===== */
 
-#myContainer {
-  width: 800px;
-  height: 800px;
-  position: center;
-  background-color: aqua;
-}
 #myAnimation {
   /* width: 50px;
   height: 50px; */
@@ -280,10 +280,6 @@ a:hover, a:active {
   }
 }
 
-footer {
-  height: 400px;
-}
-
 .tutorial {
   color: goldenrod;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -292,6 +288,15 @@ footer {
   margin-top: 7%;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+.how {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 36px;
+  color:black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-weight: bold; 
+  padding: 2%;
 }
 
 .tutorialTwo {
@@ -305,14 +310,7 @@ footer {
   margin-bottom: 5%;
 }
 
-.how {
-  font-family: 'Bowlby One SC', cursive;
-  font-size: 36px;
-  color:black;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-  font-weight: bold; 
-  padding: 5%;
-}
+
 
 
 

@@ -117,56 +117,30 @@ h1 {
   margin-bottom: 2%;
 }
 
-#Spanish {
-    color: crimson;
-    font-size:23px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-#English {
-    color: rgba(26, 26, 172, 0.74);
-    font-size:23px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-#SpanishTitle {
-    color: crimson;
-    font-size: 46px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-#EnglishTitle {
-    color: rgba(26, 26, 172, 0.74);
-    font-size: 46px;
-    padding-top: 10px;
-    text-align: center;
-}
-
 table {
-    display: table;
-    border-collapse: separate;
-    margin: 0 auto;
-    color: goldenrod;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 18px;
+  margin:auto;
+  font-family: 'Press Start 2P', cursive;
+  background-color: white;
+  border: 2px solid rgb(241, 207, 250);
+  font-size: 1.2em;
+  border-spacing: 10px;
 }
 
-thead {
-  font-size: 20px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-family: 'Bowlby One SC', cursive;
-  color: rgba(255, 255, 255, 0.829);
+tr:first-child{
+  background-color: rgb(110, 0, 108);  
+  border-bottom: 2px solid black;
+  font-size: 1.5em;
+  border-collapse: collapse;
+}
+
+tr:nth-child(2n){
+  background-color: rgb(207, 151, 208); 
+}
+
+td {
+  padding: 15px;
 }
 
 main {
   padding: 2%;
   margin-bottom: 8%;
-
-footer {
-  height: 400px;
-
-}

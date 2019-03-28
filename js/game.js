@@ -150,6 +150,8 @@ function addTheme(){
     stylesheet.href = '../css/game-missiles.css';
   } else if(themeChosen === 'snakes'){
     stylesheet.href = '../css/game-snakes.css';
+  } else if(themeChosen === 'cat'){
+    stylesheet.href = '../css/game-cats.css';
   }
 }
 

@@ -105,7 +105,6 @@ main {
   height: 600px;
   width: 960px;
   position: relative;
-  border: 2px solid black;
   color: white;
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
@@ -179,17 +178,10 @@ input#startbutton {
 }
 
 @keyframes example {
-  /* 15% {top: -700px;} */
-  /* 35% {left: 1200px;} */
-  /* 50% {top: -700px;} */
   70% {transform: translateX(900px) translateY(-1000px) scale(0.75, 0.75) rotate(-0.38turn) skew(15deg, 15deg);}
   75% {top: -1700px;}
   91% {right: 6000px; opacity: 0;}
   100% {opacity: 0;}
-  /* 99% {transform: translate(1200px, 75%);}
-  100% {transform: translate(1200px, 99%);} */
-  /* 99% {top: -500px; left: 1000px; opacity: 100;}  */
-  /* 100% {top: -500px; left: 1000px; opacity: 0;}  */
 }
 
 #scoreBoard {
@@ -219,9 +211,3 @@ main > a:last-child{
 td {
   padding: 15px;
 }
-
-
-footer {
-  height: 400px;
-}
-
