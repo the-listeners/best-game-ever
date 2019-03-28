@@ -182,16 +182,55 @@ input#startbutton {
 
 .mover {
   animation-name: example;
-  animation-duration: 6s;
-  animation-fill-mode: both;   
-}
-
-#scoreBoard {
-  background-color: aliceblue;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-timing-function: ease;   
 }
 
 @keyframes example {
-  99% {top: -500px; left: 1000px; opacity: 100;} 
-  100% {top: -500px; left: 1000px; opacity: 0;} 
+  /* 15% {top: -700px;} */
+  /* 35% {left: 1200px;} */
+  /* 50% {top: -700px;} */
+  70% {transform: translateX(900px) translateY(-1000px) scale(0.75, 0.75) rotate(-0.38turn) skew(15deg, 15deg);}
+  75% {top: -1700px;}
+  91% {right: 6000px; opacity: 0;}
+  100% {opacity: 0;}
+  /* 99% {transform: translate(1200px, 75%);}
+  100% {transform: translate(1200px, 99%);} */
+  /* 99% {top: -500px; left: 1000px; opacity: 100;}  */
+  /* 100% {top: -500px; left: 1000px; opacity: 0;}  */
+}
+
+#scoreBoard {
+  margin:auto;
+  font-family: 'Press Start 2P', cursive;
+  background-color: white;
+  border: 2px solid rgb(241, 207, 250);
+  font-size: 1.2em;
+  border-spacing: 10px;
+}
+
+#scoreBoard > tr:first-child{
+  background-color: rgb(110, 0, 108);  
+  border-bottom: 2px solid black;
+  font-size: 1.5em;
+  border-collapse: collapse;
+}
+
+#scoreBoard > tr:nth-child(2n){
+  background-color: rgb(207, 151, 208); 
+}
+
+main > a:last-child{
+  font-family: 'Press Start 2P', cursive;
+}
+
+td {
+  padding: 15px;
+}
+
+
+footer {
+  height: 400px;
 }
 
