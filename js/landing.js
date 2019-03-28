@@ -1,18 +1,28 @@
-'use strict'
-// myMove();
-// Global variables
+'use strict';
+
+/*==============================================
+GLOBAL VARIABLES
+================================================*/
+
 var userName;
 var stringyUser;
 
-// DOM references
+/*==============================================
+DOM REFERENCES
+================================================*/
+
+//Reference form
 var testForm = document.getElementById('user_input');
 
-// redirects when
+/*==============================================
+FUNCTIONS AND SUBMIT EVENT LISTENER
+================================================*/
+//Redirects to game page after user inputs name, selects language, and hits enter
 function redirect(){
   window.location.href='pages/game.html';
 }
 
-// Event handler for username and language selection
+//Submit event handler
 var formSubmitHandler = function (formSubmit) {
   formSubmit.preventDefault();
 
@@ -30,39 +40,33 @@ var formSubmitHandler = function (formSubmit) {
   var themeChosen = formSubmit.target.themeSelection.value;
   localStorage.setItem('theme', themeChosen);
 };
-
-
-
-// Username submit listener
+//Add listener for form submit
 testForm.addEventListener('submit', formSubmitHandler);
 
-// Stores word array to local storage
+//This function adds some fun!
+//Special effects - Meteor moving in background
+function myMove() {
+  var elem = document.getElementById('myAnimation');   
+  var pos = 0;
+  var id = setInterval(frame, 15);
+  function frame() {
+    if (pos == 8000
+    ) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.bottom = pos + 'px'; 
+      elem.style.right = pos + 'px'; 
+    }
+  }
+}
+
+/*==============================================
+INITIALIZE PAGE
+================================================*/
+
+
+//Stores array with word objects to local
 storeWordArray();
-
- // ===========================================================//
-// chet moving around after clicking enter
-// ===========================================================//
-
-// function myMove() {
-//   var elem = document.getElementById('myAnimation');   
-//   var pos = 0;
-//   var id = setInterval(frame, 100);
-//   function frame() {
-//     if (pos == 300) {
-//       clearInterval(id);
-//     } else {
-//       pos++; 
-//       elem.style.bottom = pos + 'px'; 
-//       elem.style.right = pos + 'px'; 
-//     }
-//   }
-// }
-
-
-// // redirects when
-// function redirect(){
-//   window.location.href='pages/game.html';
-// }
-
-
+myMove();
 

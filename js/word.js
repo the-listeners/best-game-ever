@@ -1,15 +1,16 @@
-// This page instantiates the words that will be used in this game
+//This page instantiates the words that will be used in this game
 
-// Global variables
+/*==============================================
+GLOBAL VARIABLES
+================================================*/
+
 var wordObjectArray = [];
 
-// Function to store all word objects to local storage
-function storeWordArray(){
-  var stringyWordArray = JSON.stringify(wordObjectArray);
-  localStorage.setItem('wordArray', stringyWordArray);
-}
+/*==============================================
+FUNCTIONS AND LOCAL STORAGE
+================================================*/
 
-// Constructor function to create words
+//Constructor function to create word objects
 var WordObject = function(english, spanish, french, latvian, german){
   this.english = english;
   this.spanish = spanish;
@@ -19,7 +20,15 @@ var WordObject = function(english, spanish, french, latvian, german){
   wordObjectArray.push(this);
 };
 
-// Instantiate words
+//Function to store all word objects to local storage
+function storeWordArray(){
+  var stringyWordArray = JSON.stringify(wordObjectArray);
+  localStorage.setItem('wordArray', stringyWordArray);
+}
+
+/*==============================================
+INSTANTIATE WORDS
+================================================*/
 new WordObject('one', 'uno', 'un', 'viens', 'ein');
 new WordObject('two', 'dos', 'deux', 'divi', 'zwei');
 new WordObject('three', 'tres', 'trois', 'tris', 'drei');

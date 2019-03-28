@@ -137,6 +137,7 @@ input#user_name {
   color: rgb(230, 136, 43);
   font-family: 'Press Start 2P', cursive;
   font-size: 16px;
+ 
 }
 
 #languageSelection {
@@ -153,6 +154,7 @@ input#user_name {
   font-family: 'Press Start 2P', cursive;
   cursor: pointer;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  z-index: 2;
 }
 
 option {
@@ -249,31 +251,68 @@ a:hover, a:active {
 
 
 
-
+  /* ==== Animation for the spiny rock ===== */
 
 #myContainer {
   width: 800px;
   height: 800px;
   position: center;
   background-color: aqua;
-
 }
 #myAnimation {
   /* width: 50px;
   height: 50px; */
   position: relative;
   background-color:transparent;
-  /* background: url(/pages/williams.png); */
+  /* background-color: aqua; */
+  z-index: -1;
+  -webkit-animation: rotation 25s infinite linear;
+   -webkit-transform: rotate(359deg);
+   
+}
+@-webkit-keyframes rotation {
+  from {
+      -webkit-transform: rotate(0deg);
+      -webkit-transition: -webkit-transform 1s ease-in;
+  }
+  to {
+     
+  }
 }
 
-img {
- 
- 
- top: 0;
- right: 0;
- bottom: 91px;
- left: 0;
-
+footer {
+  height: 400px;
 }
+
+.tutorial {
+  color: goldenrod;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  margin-top: 7%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.tutorialTwo {
+  color:goldenrod;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  margin-top: -2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+}
+
+.how {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 36px;
+  color:black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-weight: bold; 
+  padding: 5%;
+}
+
 
 
