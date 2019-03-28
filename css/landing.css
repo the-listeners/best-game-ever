@@ -184,6 +184,12 @@ option[value="latvian"]{
   display: block;
 }
 
+option[value="german"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
 /* #languageSelection:hover {
   background-color: rgb(230, 136, 43);
 } */
