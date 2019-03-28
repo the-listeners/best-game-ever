@@ -10,31 +10,32 @@ function storeWordArray(){
 }
 
 // Constructor function to create words
-var WordObject = function(english, spanish, french){
+var WordObject = function(english, spanish, french, latvian){
   this.english = english;
   this.spanish = spanish;
   this.french = french;
+  this.latvian = latvian;
   wordObjectArray.push(this);
 };
 
 // Instantiate words
-new WordObject('one', 'uno', 'un');
-new WordObject('two', 'dos', 'deux');
-new WordObject('three', 'tres', 'trois');
-new WordObject('four', 'quatro', 'quatre');
-new WordObject('five', 'cinco', 'cinq');
-new WordObject('red', 'rojo', 'six');
-new WordObject('blue', 'azul', 'bleu');
-new WordObject('green', 'verde', 'vert');
-new WordObject('yellow', 'amarillo', 'jaune');
-new WordObject('purple', 'púrpura', 'violet');
-new WordObject('car', 'coche', 'voiture');
-new WordObject('bathroom', 'baño', 'salle de bains');
-new WordObject('please', 'por favor', 's\'il vous plait');
-new WordObject('cat', 'gato', 'chat');
-new WordObject('dog', 'perro', 'chien');
-new WordObject('yes', 'sí', 'oui');
-new WordObject('no', 'no', 'non');
-new WordObject('hello', 'hola', 'bonjour');
-new WordObject('goodbye', 'adiós', 'au revoir');
-new WordObject('monkey', 'mono', 'singe');
+new WordObject('one', 'uno', 'un', 'viens');
+new WordObject('two', 'dos', 'deux', 'divi');
+new WordObject('three', 'tres', 'trois', 'tris');
+new WordObject('four', 'quatro', 'quatre', 'cetri');
+new WordObject('five', 'cinco', 'cinq', 'pieci');
+new WordObject('red', 'rojo', 'six', 'sarkans');
+new WordObject('blue', 'azul', 'bleu', 'zils');
+new WordObject('green', 'verde', 'vert', 'zals');
+new WordObject('yellow', 'amarillo', 'jaune', 'dzeltens');
+new WordObject('purple', 'púrpura', 'violet', 'lila');
+new WordObject('car', 'coche', 'voiture', 'masina');
+new WordObject('bathroom', 'baño', 'salle de bains', 'vannas istaba');
+new WordObject('please', 'por favor', 's\'il vous plait', 'ludzu');
+new WordObject('cat', 'gato', 'chat', 'kakis');
+new WordObject('dog', 'perro', 'chien', 'suns');
+new WordObject('yes', 'sí', 'oui', 'ja');
+new WordObject('no', 'no', 'non', 'ne');
+new WordObject('hello', 'hola', 'bonjour', 'cau');
+new WordObject('goodbye', 'adiós', 'au revoir', 'atta');
+new WordObject('monkey', 'mono', 'singe', 'pertikis');
