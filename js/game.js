@@ -59,6 +59,8 @@ function randomWord(){
     selectedWord = wordObjectArray[numSelected].french;
   } else if(language === 'latvian'){
     selectedWord = wordObjectArray[numSelected].latvian;
+  } else if(language === 'german'){
+    selectedWord = wordObjectArray[numSelected].german;
   }
 
   asteroidsTracker++;
@@ -89,7 +91,7 @@ function check(selector, userGuess){
   var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian){
+    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian || grabSelectedWordFromFormLabel === wordObjectArray[i].german){
       var checkWordObject = wordObjectArray[i];
     }
   }
