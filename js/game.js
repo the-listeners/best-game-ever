@@ -24,9 +24,11 @@ for(var i = 0; i < numOfMissiles; i++){
   var form = document.getElementById(i);
   formArray.push(form);
 }
+var backgroundImage = document.getElementById('backgroundImage');
 
-// Retrieves language chosen by user
+// Retrieves language and theme chosen by user
 var language = localStorage.getItem('language');
+var themeChosen = localStorage.getItem('theme');
 
 // Retrieves word array
 var stringyWordArray = localStorage.getItem('wordArray');
@@ -67,6 +69,17 @@ function randomWord(){
   return wordGenerated;
 }
 
+// Function to choose theme background for word
+function addTheme(index){
+  if(themeChosen === 'missiles'){
+    formArray[index].title = 'missiles';
+    backgroundImage.title = 'planet';
+  } else if(themeChosen === 'snakes'){
+    formArray[index].title = 'snakes';
+    backgroundImage.title = 'asteroid';
+  }
+}
+
 // Function to create form
 function renderWord(index){
   var formLabel = document.createElement('Label');
@@ -76,6 +89,7 @@ function renderWord(index){
   formLabel.innerHTML = randomWord();
   missileDisplay.push(formLabel.innerHTML);
   formInput.name = 'formName';
+  addTheme(index);
   formArray[index].appendChild(formLabel);
   formArray[index].appendChild(formInput);
 }

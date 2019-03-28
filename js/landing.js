@@ -1,5 +1,5 @@
 'use strict'
-myMove();
+// myMove();
 // Global variables
 var userName;
 var stringyUser;
@@ -25,7 +25,12 @@ var formSubmitHandler = function (formSubmit) {
   // Storing language chosen to local storage
   var languageChosen = formSubmit.target.languageSelection.value;
   localStorage.setItem('language', languageChosen);
+
+  // Storing theme chosen to local storage
+  var themeChosen = formSubmit.target.themeSelection.value;
+  localStorage.setItem('theme', themeChosen);
 };
+
 
 
 // Username submit listener
@@ -38,26 +43,26 @@ storeWordArray();
 // chet moving around after clicking enter
 // ===========================================================//
 
-function myMove() {
-  var elem = document.getElementById('myAnimation');   
-  var pos = 0;
-  var id = setInterval(frame, 100);
-  function frame() {
-    if (pos == 300) {
-      clearInterval(id);
-    } else {
-      pos++; 
-      elem.style.bottom = pos + 'px'; 
-      elem.style.right = pos + 'px'; 
-    }
-  }
-}
+// function myMove() {
+//   var elem = document.getElementById('myAnimation');   
+//   var pos = 0;
+//   var id = setInterval(frame, 100);
+//   function frame() {
+//     if (pos == 300) {
+//       clearInterval(id);
+//     } else {
+//       pos++; 
+//       elem.style.bottom = pos + 'px'; 
+//       elem.style.right = pos + 'px'; 
+//     }
+//   }
+// }
 
 
-// redirects when
-function redirect(){
-  window.location.href='pages/game.html';
-}
+// // redirects when
+// function redirect(){
+//   window.location.href='pages/game.html';
+// }
 
 
 

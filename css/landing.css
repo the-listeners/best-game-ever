@@ -190,6 +190,34 @@ option[value="german"]{
   display: block;
 }
 
+#themeSelection {
+  background:transparent;
+  border: solid;
+  height: 53px;
+  border-color: white;
+  color: rgb(207, 151, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+option[value="missiles"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
+option[value="snakes"]{
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  display: block;
+}
+
 /* #languageSelection:hover {
   background-color: rgb(230, 136, 43);
 } */
