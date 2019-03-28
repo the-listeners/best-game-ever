@@ -114,8 +114,9 @@ main {
 
 form {
   background-image: url(/images/cat.png);
-  background-size: 550px;
-  background-position: -260px -31px;
+  background-size: 240px;
+  background-position: 0px -10px;
+  background-repeat: no-repeat;
 }
 
 [id='0'] {
