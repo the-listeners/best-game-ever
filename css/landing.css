@@ -247,4 +247,34 @@ img {
 
 }
 
+.tutorial {
+  color: goldenrod;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  margin-top: 7%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.tutorialTwo {
+  color:goldenrod;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  margin-top: -2%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+}
+
+.how {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 36px;
+  color:black;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-weight: bold; 
+  padding: 5%;
+}
+
 
