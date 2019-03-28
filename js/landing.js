@@ -39,7 +39,7 @@ storeWordArray();
 // ===========================================================//
 
 function myMove() {
-  var elem = document.getElementById("myAnimation");   
+  var elem = document.getElementById('myAnimation');   
   var pos = 0;
   var id = setInterval(frame, 100);
   function frame() {
@@ -56,7 +56,7 @@ function myMove() {
 
 // redirects when
 function redirect(){
-  window.location.href="pages/game.html";
+  window.location.href='pages/game.html';
 }
 
 
