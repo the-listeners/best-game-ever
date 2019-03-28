@@ -97,6 +97,7 @@ function check(selector, userGuess){
   if (userGuess === checkWordObject.english){
     scoreTracker = scoreTracker + 1000;
     formsLeft -= 1;
+
     formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);
@@ -213,6 +214,7 @@ var UserResultsObject = function(userName, score){
 //function that collects highest scores
 function getHighScores() {
   highScoresArray = [];
+
   userResultsObjArray.sort(function(a, b){return b.score - a.score});
   highScoresArray = userResultsObjArray.slice(0, numHighScoreDisplayed + 1);
 }
