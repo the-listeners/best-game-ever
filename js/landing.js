@@ -44,9 +44,10 @@ testForm.addEventListener('submit', formSubmitHandler);
 function myMove() {
   var elem = document.getElementById('myAnimation');   
   var pos = 0;
-  var id = setInterval(frame, 100);
+  var id = setInterval(frame, 15);
   function frame() {
-    if (pos == 300) {
+    if (pos == 8000
+    ) {
       clearInterval(id);
     } else {
       pos++; 
@@ -60,6 +61,8 @@ function myMove() {
 INITIALIZE PAGE
 ================================================*/
 
+
 //Stores array with word objects to local
 storeWordArray();
 myMove();
+
