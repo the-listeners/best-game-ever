@@ -157,6 +157,7 @@ input#user_name {
 
 option {
   display: none;
+  background-color: black;
   position: absolute;
   border-color: white;
   min-width: 160px;
@@ -167,25 +168,53 @@ option {
 }
 
 option[value="spanish"]{
-  color: rgb(255, 255, 255);
+  color: rgb(207, 151, 208);
   padding: 12px 16px;
   display: block;
 }
 
 option[value="french"]{
-  color: rgb(255, 255, 255);
+  color: rgb(207, 151, 208);
   padding: 12px 16px;
   display: block;
 }
 
 option[value="latvian"]{
-  color: rgb(255, 255, 255);
+  color: rgb(207, 151, 208);
   padding: 12px 16px;
   display: block;
 }
 
 option[value="german"]{
-  color: rgb(255, 255, 255);
+  color: rgb(207, 151, 208);
+  padding: 12px 16px;
+  display: block;
+}
+
+#themeSelection {
+  background:transparent;
+  border: solid;
+  height: 53px;
+  border-color: white;
+  color: rgb(207, 151, 208);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+option[value="missiles"]{
+  color: rgb(207, 151, 208);
+  padding: 12px 16px;
+  display: block;
+}
+
+option[value="snakes"]{
+  color: rgb(207, 151, 208);
   padding: 12px 16px;
   display: block;
 }

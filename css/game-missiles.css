@@ -112,14 +112,17 @@ main {
   text-transform: uppercase;
 }
 
+form {
+  background-image: url(/images/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
 [id='0'] {
   height: 65px;
   width: 400px;
   position: absolute;
   padding-top: 45px;
-  background-image: url(/images/missile.png);
-  background-size: 550px;
-  background-position: -80px -22px;
 }
 
 [id='1'] {
@@ -128,9 +131,6 @@ main {
   position: absolute;
   top: 100px;
   padding-top: 45px;
-  background-image: url(/images/missile.png);
-  background-size: 550px;
-  background-position: -80px -22px;
 }
 
 [id='2'] {
@@ -139,9 +139,6 @@ main {
   position: absolute;
   top: 200px;
   padding-top: 45px;
-  background-image: url(/images/missile.png);
-  background-size: 550px;
-  background-position: -80px -22px;
 }
 
 [id='3'] {
@@ -150,9 +147,6 @@ main {
   position: absolute;
   top: 300px;
   padding-top: 45px;
-  background-image: url(/images/missile.png);
-  background-size: 550px;
-  background-position: -80px -22px;
 }
 
 [id='4'] {
@@ -161,11 +155,8 @@ main {
   position: absolute;
   top: 400px;
   padding-top: 45px;
-  background-image: url(/images/missile.png);
-  background-size: 550px;
-  background-position: -80px -22px;
-
 }
+
 input {
   background: transparent;
   margin-left: 1%;
