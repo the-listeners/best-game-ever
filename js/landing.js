@@ -7,6 +7,11 @@ var stringyUser;
 // DOM references
 var testForm = document.getElementById('user_input');
 
+// redirects when
+function redirect(){
+  window.location.href='pages/game.html';
+}
+
 // Event handler for username and language selection
 var formSubmitHandler = function (formSubmit) {
   formSubmit.preventDefault();
@@ -20,8 +25,8 @@ var formSubmitHandler = function (formSubmit) {
   // Storing language chosen to local storage
   var languageChosen = formSubmit.target.languageSelection.value;
   localStorage.setItem('language', languageChosen);
-  redirect();
 };
+
 
 // Username submit listener
 testForm.addEventListener('submit', formSubmitHandler);
@@ -32,8 +37,8 @@ storeWordArray();
 // ===========================================================//
 // Toggle about me
 // ===========================================================//
-function aboutMeToggle() {
-  var x = document.getElementById("info");
+function joannaToggle() {
+  var x = document.getElementById("joannaInfo");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -42,12 +47,48 @@ function aboutMeToggle() {
 
 }
 
+function denevanToggle() {
+  var x = document.getElementById("denevanInfo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+
+function pratiibhToggle() {
+  var x = document.getElementById("pratiibhInfo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+
+function melissaToggle() {
+  var x = document.getElementById("melissaInfo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+}
+
+function williamsToggle() {
+  var x = document.getElementById("williamsInfo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 
  // ===========================================================//
 // chet moving around after clicking enter
 // ===========================================================//
-
-
 
 function myMove() {
   var elem = document.getElementById("myAnimation");   
@@ -66,9 +107,8 @@ function myMove() {
 
 
 // redirects when
-function redirect()
-{
-    window.location.href="pages/game.html";
+function redirect(){
+  window.location.href="pages/game.html";
 }
 
 

@@ -26,7 +26,6 @@
     <header>
         <nav>
             <ul>
-                <li><a href="pages/game.html">Play the Game</a></li>
                 <li><a href="pages/about-us.html">About the Developers</a></li>
                 <li><a href="pages/glossary.html">Glossary</a></li>
 
@@ -38,20 +37,20 @@
       <p>
         <form id="user_input" autocomplete="off">
           <label for="user_name"> User Name  
-            <input name="userName" type="" id="user_name" required = "required"> 
-          </label>
+
+            <input name="userName" id="user_name" type="" required="required"> 
+          </label> 
           <select id="languageSelection">
             <option value="spanish">Spanish</option>
             <option value="french">French</option>
+            <option value="latvian">Latvian</option>
           </select>
 
           <a href="pages/game.html">
-          <input type="submit" value="Enter" onclick="redirect();">
+          <input type="submit" value="Lets Play!" onclick="redirect()">
         </a>
        
        </p>
-       
-
           <button onclick="myMove()">Click Me</button> 
           <div id ="image">
           <div id ="myAnimation" > 
@@ -59,11 +58,7 @@
               
           </div>
           </div>
-       
 
-
-
-<!--           <input type="submit" value="Enter" required="required"> -->
       </p>
 
     </main>
