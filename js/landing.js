@@ -1,5 +1,5 @@
 'use strict'
-
+myMove();
 // Global variables
 var userName;
 var stringyUser;
@@ -93,14 +93,14 @@ function williamsToggle() {
 function myMove() {
   var elem = document.getElementById("myAnimation");   
   var pos = 0;
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 100);
   function frame() {
-    if (pos == 350) {
+    if (pos == 300) {
       clearInterval(id);
     } else {
       pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
+      elem.style.bottom = pos + 'px'; 
+      elem.style.right = pos + 'px'; 
     }
   }
 }

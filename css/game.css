@@ -96,6 +96,7 @@ nav > ul > li {
 }
 
 
+
 main {
   background: no-repeat;
   background-image: url(/css/planet.png);
@@ -113,6 +114,7 @@ main {
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
+
 
 }
 
@@ -168,8 +170,8 @@ main {
   background-image: url(/css/missile.png);
   background-size: 550px;
   background-position: -80px -22px;
-}
 
+}
 input {
   background: transparent;
   margin-left: 1%;
@@ -182,17 +184,17 @@ input {
 input#startbutton {
   color: white;
 }
-
-
 .mover {
   animation-name: example;
   animation-duration: 6s;
   animation-fill-mode: both;   
 }
 
+
 #scoreBoard {
   background-color: aliceblue;
 }
+
 
 @keyframes example {
   99% {top: -500px; left: 1000px; opacity: 100;} 
