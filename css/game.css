@@ -95,14 +95,10 @@ nav > ul > li {
   color: rgb(207, 151, 208);
 }
 
-
-
 main {
   background: no-repeat;
   background-image: url(/css/planet.png);
-  /* background-size: 500px; */
   background-position-x: 100%;
-
 }
 
 #gameBackground {
@@ -114,8 +110,6 @@ main {
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-
-
 }
 
 [id='0'] {
@@ -181,20 +175,20 @@ input {
   font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
 }
+
 input#startbutton {
   color: white;
 }
+
 .mover {
   animation-name: example;
   animation-duration: 6s;
   animation-fill-mode: both;   
 }
 
-
 #scoreBoard {
   background-color: aliceblue;
 }
-
 
 @keyframes example {
   99% {top: -500px; left: 1000px; opacity: 100;} 

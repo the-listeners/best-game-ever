@@ -18,20 +18,20 @@ var userScore;
 var stringyScore;
 var stringyResultsArray = [];
 
-var numOfAsteroids= 5;
-var asteroidsTracker = 0;
+var numOfMissiles= 5;
+var missileTracker = 0;
 var formArray = [];
 
 var formsLeft = 5;
 var moveAsteroidRight = 0;
 
 // DOM REFERENCES
-for(var i = 0; i < numOfAsteroids; i++){
+for(var i = 0; i < numOfMissiles; i++){
   var form = document.getElementById(i);
   formArray.push(form);
 }
 
-// Retrieves language:
+// Retrieves language chosen by user
 var language = localStorage.getItem('language');
 
 // Retrieves word array
@@ -48,7 +48,7 @@ function randomizer(){
   return randomNumber;
 }
 
-// Generating word for asteroid
+// Generating word for missile
 function randomWord(){
   var numSelected = randomizer();
   var selectedWord;
@@ -63,12 +63,12 @@ function randomWord(){
     selectedWord = wordObjectArray[numSelected].german;
   }
 
-  asteroidsTracker++;
+  missileTracker++;
 
-  if(asteroidsTracker === numOfAsteroids){
+  if(missileTracker === numOfMissiles){
     prevNumArray = tempNumArray;
     tempNumArray = [];
-    asteroidsTracker = 0;
+    missileTracker = 0;
   }
   return selectedWord;
 }
@@ -99,7 +99,6 @@ function check(selector, userGuess){
   if (userGuess === checkWordObject.english){
     scoreTracker = scoreTracker + 1000;
     formsLeft -= 1;
-
     formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);
@@ -130,7 +129,6 @@ function handleUserInput(event){
     userScore = scoreTracker;
     stringyScore = JSON.stringify(userScore);
     localStorage.setItem('Score', stringyScore);
-
 
     var getName = localStorage.getItem('user');
     var unStringName = JSON.parse(getName);
@@ -166,14 +164,13 @@ for(var i = 0; i < formArray.length; i++){
 }
 
 // Loop to render all words into array and stores it
-for (var i = 0; i < numOfAsteroids; i++){
+for (var i = 0; i < numOfMissiles; i++){
   renderWord(i);
 }
 
 var tableHeaderArray = ['Rank', 'User Name', 'Score'];
 var rankArray = ['#1', '#2', '#3', '#4', '#5'];
 var userResultsObjArray = [];
-
 
 // Table for score
 var scoreBoardTable = document.getElementById('scoreBoard');
@@ -217,7 +214,7 @@ var UserResultsObject = function(userName, score){
 function getHighScores() {
   highScoresArray = [];
 
-  userResultsObjArray.sort(function(a, b){return b.score - a.score});
+  userResultsObjArray.sort(function(a, b){return b.score - a.score;});
   highScoresArray = userResultsObjArray.slice(0, numHighScoreDisplayed + 1);
 }
 
