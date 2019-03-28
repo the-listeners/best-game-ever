@@ -1,0 +1,215 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy); 
+@import url(https://fonts.googleapis.com/css?family=Six+Caps);
+@import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
+body {
+  background: url(https://media3.giphy.com/media/3o752j2VOLhRZ3h5Wo/giphy.gif?cid=790b76115c9d4b9a445232566b8982f8);
+  background-repeat: no-repeat;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.intro {
+  color: rgb(207, 151, 208);
+  display: block;
+  font-family: 'Satisfy', cursive;
+  font-size: 32px;
+  text-shadow: 1px 1px black;
+  transform: rotate(-10deg);
+}
+.intro--the {
+  transform: rotate(-10deg) translate(-20px, 15px);
+}
+.intro--num {
+  background: rgb(240, 200, 160);
+  border: 1px dotted rgb(50, 146, 194);
+  color: rgb(50, 146, 194);
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bolder;
+  padding: 4px 6px 2px;
+  position: absolute;
+  text-shadow: none;
+  transform: rotate(-10deg) translate(20px, -25px);
+}
+.logo_container {
+  display: inline-block;
+  margin: 25px auto 40px;
+}
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 100px;
+  letter-spacing: 10px;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+}
+.logo_top {
+  background: linear-gradient(rgb(255, 142, 142), rgb(165, 207, 232));
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: absolute;
+  z-index: 1;
+  -webkit-text-fill-color: transparent;
+}
+.logo_bot {
+  text-shadow: 
+    2px 1px rgb(110, 0, 108),
+    4px 2px rgb(110, 0, 108),
+    6px 4px rgb(110, 0, 108),
+    8px 5px rgb(110, 0, 108),
+    10px 6px rgb(110, 0, 108),
+    12px 7px rgb(110, 0, 108),
+    14px 8px rgb(110, 0, 108),
+    16px 9px rgba(0, 0, 0, 0.555),
+    18px 10px rgba(0, 0, 0, 0.555),
+    20px 11px rgba(0, 0, 0, 0.555),
+    22px 12px rgba(0, 0, 0, 0.555),
+    24px 13px rgba(0, 0, 0, 0.555);
+}
+.sub {
+  color:rgb(241, 207, 250);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+.sub-name {
+  margin-left: 1%;
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 18px;
+  color:black;
+  text-shadow: -1px 0 rgba(255, 255, 255, 0.767), 0 1px rgba(255, 255, 255, 0.767), 1px 0 rgba(255, 255, 255, 0.767), 0 -1px rgba(255, 255, 255, 0.767);
+}
+nav > ul {
+  display: inline-block;
+  margin: 25px auto 40px;
+}
+nav > ul > li {
+  float: left;
+  line-height: 70px;
+  margin-right: 70px;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(207, 151, 208);
+}
+
+main {
+  background: no-repeat;
+  background-image: url(/images/sushi.png);
+  background-position-x: 100%;
+}
+
+#gameBackground {
+  height: 600px;
+  width: 960px;
+  position: relative;
+  color: black;
+  font-weight: bolder;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+form {
+  background-image: url(/images/cat.png);
+  background-size: 550px;
+  background-position: -260px -31px;
+}
+
+[id='0'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  padding-top: 45px;
+}
+
+[id='1'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  padding-top: 45px;
+}
+
+[id='2'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 200px;
+  padding-top: 45px;
+}
+
+[id='3'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 300px;
+  padding-top: 45px;
+}
+
+[id='4'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 400px;
+  padding-top: 45px;
+}
+
+input {
+  background: transparent;
+  margin-left: 6%;
+  width: 22%;
+  border: 1px solid white;
+  color: hotpink;
+  font-weight: bolder;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+input#startbutton {
+  color: white;
+}
+
+.mover {
+  animation-name: example;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-timing-function: ease;   
+}
+
+@keyframes example {
+  70% {transform: translateX(900px) translateY(-1000px) scale(0.75, 0.75) rotate(-0.38turn) skew(15deg, 15deg);}
+  75% {top: -1700px;}
+  91% {right: 6000px; opacity: 0;}
+  100% {opacity: 0;}
+}
+
+#scoreBoard {
+  margin:auto;
+  font-family: 'Press Start 2P', cursive;
+  background-color: white;
+  border: 2px solid rgb(241, 207, 250);
+  font-size: 1.2em;
+  border-spacing: 10px;
+}
+
+#scoreBoard > tr:first-child{
+  background-color: rgb(110, 0, 108);  
+  border-bottom: 2px solid black;
+  font-size: 1.5em;
+  border-collapse: collapse;
+}
+
+#scoreBoard > tr:nth-child(2n){
+  background-color: rgb(207, 151, 208); 
+}
+
+main > a:last-child{
+  font-family: 'Press Start 2P', cursive;
+}
+
+td {
+  padding: 15px;
+}
