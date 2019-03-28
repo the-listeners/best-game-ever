@@ -123,7 +123,7 @@ function handleUserInput(event){
   event.preventDefault();
   var selector = event.target.id;
   var userGuess = event.target.formName.value.toLowerCase();
-  if (formsLeft === 0 || moveAsteroidRight > 100){
+  if (formsLeft === 0 || moveAsteroidRight > 700){
     // Store score to local storage
     userScore = scoreTracker;
     stringyScore = JSON.stringify(userScore);
