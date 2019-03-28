@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Satisfy); 
 @import url(https://fonts.googleapis.com/css?family=Six+Caps);
 @import url(https://fonts.googleapis.com/css?family=Bowlby+One+SC|Lobster|Press+Start+2P|Trade+Winds);
-
 body {
   background: url(https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif);
   background-repeat: no-repeat;
@@ -11,16 +10,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
-.halo {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  pointer-events: none;
-}
-
 .intro {
   color: rgb(207, 151, 208);
   display: block;
@@ -29,11 +18,9 @@ body {
   text-shadow: 1px 1px black;
   transform: rotate(-10deg);
 }
-
 .intro--the {
   transform: rotate(-10deg) translate(-20px, 15px);
 }
-
 .intro--num {
   background: rgb(240, 200, 160);
   border: 1px dotted rgb(50, 146, 194);
@@ -47,12 +34,10 @@ body {
   text-shadow: none;
   transform: rotate(-10deg) translate(20px, -25px);
 }
-
 .logo_container {
   display: inline-block;
   margin: 25px auto 40px;
 }
-
 .logo {
   font-family: 'Press Start 2P', cursive;
   font-size: 100px;
@@ -61,7 +46,6 @@ body {
   margin: 0;
   position: relative;
 }
-
 .logo_top {
   background: linear-gradient(rgb(255, 142, 142), rgb(165, 207, 232));
   -webkit-background-clip: text;
@@ -69,9 +53,7 @@ body {
   position: absolute;
   z-index: 1;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
 }
-
 .logo_bot {
   text-shadow: 
     2px 1px rgb(110, 0, 108),
@@ -87,14 +69,12 @@ body {
     22px 12px rgba(0, 0, 0, 0.555),
     24px 13px rgba(0, 0, 0, 0.555);
 }
-
 .sub {
   color:rgb(241, 207, 250);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
 }
-
 .sub-name {
   margin-left: 1%;
   font-family: 'Bowlby One SC', cursive;
@@ -102,13 +82,10 @@ body {
   color:black;
   text-shadow: -1px 0 rgba(255, 255, 255, 0.767), 0 1px rgba(255, 255, 255, 0.767), 1px 0 rgba(255, 255, 255, 0.767), 0 -1px rgba(255, 255, 255, 0.767);
 }
-
-
 nav > ul {
   display: inline-block;
   margin: 25px auto 40px;
 }
-
 nav > ul > li {
   float: left;
   line-height: 70px;
@@ -118,34 +95,109 @@ nav > ul > li {
   color: rgb(207, 151, 208);
 }
 
+
+
+main {
+  background: no-repeat;
+  background-image: url(/css/planet.png);
+  /* background-size: 500px; */
+  background-position-x: 100%;
+
+}
+
 #gameBackground {
-  height: 400px;
+  height: 600px;
   width: 960px;
   position: relative;
   border: 2px solid black;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'PT Sans', sans-serif;
   font-size: 14px;
-  /* background: url(/css/asteroid.png); */
+  text-transform: uppercase;
+
+
 }
 
-form {
-  /* height: 400px; */
+[id='0'] {
+  height: 65px;
+  width: 400px;
   position: absolute;
-  margin-top: 70px;
-  margin-bottom: 70px;
-  /* background: url(/css/asteroid.png); */
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
 }
 
+[id='1'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 100px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
+[id='2'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 200px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
+[id='3'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 300px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+}
+
+[id='4'] {
+  height: 65px;
+  width: 400px;
+  position: absolute;
+  top: 400px;
+  padding-top: 45px;
+  background-image: url(/css/missile.png);
+  background-size: 550px;
+  background-position: -80px -22px;
+
+}
 input {
   background: transparent;
+  margin-left: 1%;
+  width: 20%;
   border: 1px solid white;
   color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
 }
-
 input#startbutton {
   color: white;
 }
+.mover {
+  animation-name: example;
+  animation-duration: 6s;
+  animation-fill-mode: both;   
+}
 
+
+#scoreBoard {
+  background-color: aliceblue;
+}
+
+
+@keyframes example {
+  99% {top: -500px; left: 1000px; opacity: 100;} 
+  100% {top: -500px; left: 1000px; opacity: 0;} 
+}
 

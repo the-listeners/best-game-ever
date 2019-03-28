@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Learning the Lingo</title>
-    <link rel="shortcut icon" href="https://www.7-eleven.com/sites/default/files/2018-09/FourLoko-can-min.jpg" />
+    <link rel="shortcut icon" href="https://ya-webdesign.com/images250_/pixelated-asteroid-png-1.png"/>
 
     <link href="css/reset.css" rel="stylesheet">
     <link href="css/landing.css" rel="stylesheet">
 </head>
 <body>
-  <div class="halo"></div>
   <div>
     <span class="intro intro--the"></span>
     <span class="intro"></span>
@@ -26,8 +25,8 @@
   </div>
     <header>
         <nav>
+            
             <ul>
-                <li><a href="pages/game.html">Play the Game</a></li>
                 <li><a href="pages/about-us.html">About the Developers</a></li>
                 <li><a href="pages/glossary.html">Glossary</a></li>
 
@@ -35,20 +34,41 @@
         </nav>
     </header>
     <main>
+
       <p>
-        <form id="user_input">
+        <form id="user_input" autocomplete="off">
           <label for="user_name"> User Name  
-            <input name="userName" type="" id="user_name"> 
-          </label>
+
+
+            <input name="userName" id="user_name" type="" required="required"> 
+          </label> 
+
           <select id="languageSelection">
-            <option value="spanish">spanish</option>
-            <option value="french">french</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="latvian">Latvian</option>
           </select>
-          <input type="submit" value="Enter">
+
+          <a href="pages/game.html">
+          <input type="submit" value="Lets Play!" onclick="redirect()">
+        </a>
+       
+       </p>
+
+      <div id ="myAnimation" > 
+              <img id="myImg" src="/css/projectweek1.png">
+              <br>
+              <img id="myImg" src="/css/projectweek1.png">
+              
+          </div>
+          </div>
+
       </p>
+
     </main>
     <footer></footer>
     
+    <script src="js/word.js"></script>
     <script src="js/landing.js"></script>
 </body>
 </html>

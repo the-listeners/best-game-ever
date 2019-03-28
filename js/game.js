@@ -1,49 +1,29 @@
 'use strict';
 
-
-//This is where are the start button is being modified
-var startButton = document.getElementById('startButton');
-
-function handleStartGame(){
-  console.log('The game has begun!');
-}
-
-startButton.addEventListener('click', handleStartGame);
-
-/*
-PLANNING:
-
-Store words
-  Constructor function for word objects
-  Array of word objects?
-Function to check word inputted with objects
-Instantiate word objects
-while loop
-
-*/
 // Global variables
-var wordObjectArray = [];
 var prevNumArray = [];
 var tempNumArray = [];
 var spanishWordlabel = [];
 var formInputArray = [];
 var formLabelArray = [];
+var highScoresArray = [];
 
 var randomNumber;
-
-var language;
+var numHighScoreDisplayed = 5;
 
 var formLabel;
 var formInput;
 var scoreTracker = 0;
-var scoresArray = [];
+var userScore;
 var stringyScore;
+var stringyResultsArray = [];
 
-var numOfAsteroids= 6;
+var numOfAsteroids= 5;
 var asteroidsTracker = 0;
 var formArray = [];
 
 var formsLeft = 5;
+var moveAsteroidRight = 0;
 
 // DOM REFERENCES
 for(var i = 0; i < numOfAsteroids; i++){
@@ -51,13 +31,12 @@ for(var i = 0; i < numOfAsteroids; i++){
   formArray.push(form);
 }
 
-// Constructor function to create words
-var WordObject = function(english, spanish, french){
-  this.english = english;
-  this.spanish = spanish;
-  this.french = french;
-  wordObjectArray.push(this);
-};
+// Retrieves language:
+var language = localStorage.getItem('language');
+
+// Retrieves word array
+var stringyWordArray = localStorage.getItem('wordArray');
+var wordObjectArray = JSON.parse(stringyWordArray);
 
 // Random number function
 function randomizer(){
@@ -69,17 +48,17 @@ function randomizer(){
   return randomNumber;
 }
 
-// Generating word for asteroid // TO DO
+// Generating word for asteroid
 function randomWord(){
   var numSelected = randomizer();
-
-  language = localStorage.getItem('language');
   var selectedWord;
 
   if(language === 'spanish'){
     selectedWord = wordObjectArray[numSelected].spanish;
   } else if(language === 'french'){
     selectedWord = wordObjectArray[numSelected].french;
+  } else if(language === 'latvian'){
+    selectedWord = wordObjectArray[numSelected].latvian;
   }
 
   asteroidsTracker++;
@@ -105,28 +84,21 @@ function renderWord(index){
   formArray[index].appendChild(formInput);
 }
 
-// Function to store all word objects to local storage
-function storeWordArray(){
-  var stringyWordArray = JSON.stringify(wordObjectArray);
-  localStorage.setItem('wordArray', stringyWordArray);
-}
-
-var moveAsteroidRight = 0;
-// var movingPart = document.getElementById('movingPart');
-
 //Function to check
 function check(selector, userGuess){
   var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french){
+    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian){
       var checkWordObject = wordObjectArray[i];
     }
   }
 
   if (userGuess === checkWordObject.english){
-    scoreTracker++;
+    scoreTracker = scoreTracker + 1000;
     formsLeft -= 1;
+
+    formArray[selector].className = 'mover';
 
     formArray[selector].removeChild(formLabelArray[selector]);
     formArray[selector].removeChild(formInputArray[selector]);
@@ -151,101 +123,114 @@ function handleUserInput(event){
   event.preventDefault();
   var selector = event.target.id;
   var userGuess = event.target.formName.value.toLowerCase();
-  console.log(formsLeft);
   if (formsLeft === 0 || moveAsteroidRight > 100){
-    console.log('done');
     // Store score to local storage
-    console.log(scoreTracker);
-    // debugger;
-    // localStorage.setItem('Score', scoreTracker);
-    if(localStorage.getItem('Score') === null){
-      scoresArray.push(scoreTracker);
-      stringyScore = JSON.stringify(scoresArray);
-      localStorage.setItem('Score', stringyScore);
-    }else{
-      stringyScore = localStorage.getItem('Score');
-      scoresArray = JSON.parse(stringyScore);
-      scoresArray.push(scoreTracker);
-      stringyScore = JSON.stringify(scoresArray);
-      localStorage.setItem('Score', stringyScore);
+    userScore = scoreTracker;
+    stringyScore = JSON.stringify(userScore);
+    localStorage.setItem('Score', stringyScore);
+
+
+    var getName = localStorage.getItem('user');
+    var unStringName = JSON.parse(getName);
+    var getScore = localStorage.getItem('Score');
+    var unStringScore = JSON.parse(getScore);
+
+    if(localStorage.getItem('Results') === null) {
+      userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
+      stringyResultsArray = JSON.stringify(userResultsObjArray);
+      localStorage.setItem('Results', stringyResultsArray);
+    }else {
+      stringyResultsArray = localStorage.getItem('Results');
+      userResultsObjArray = JSON.parse(stringyResultsArray);
+      userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
+
+      stringyResultsArray = JSON.stringify(userResultsObjArray);
+      localStorage.setItem('Results', stringyResultsArray);
     }
-    // TODO: pop up with score
+    endGame();
+    getHighScores();
     buildHeader();
-    addRow();
+    for(var i = 0; i < numHighScoreDisplayed; i++){
+      addRow(i);
+    }
+    playAgain();
   } else {
     check(selector, userGuess);
   }
-
-
 }
 
 for(var i = 0; i < formArray.length; i++){
   formArray[i].addEventListener('submit', handleUserInput);
 }
 
-// Instantiate words
-new WordObject('one', 'uno', 'un');
-new WordObject('two', 'dos', 'deux');
-new WordObject('three', 'tres', 'trois');
-new WordObject('four', 'quatro', 'quatre');
-new WordObject('five', 'cinco', 'cinq');
-new WordObject('red', 'rojo', 'six');
-new WordObject('blue', 'azul', 'bleu');
-new WordObject('green', 'verde', 'vert');
-new WordObject('yellow', 'amarillo', 'jaune');
-new WordObject('purple', 'púrpura', 'violet');
-new WordObject('car', 'coche', 'voiture');
-new WordObject('bathroom', 'baño', 'salle de bains');
-new WordObject('please', 'por favor', 's \'il vous plait');
-new WordObject('cat', 'gato', 'chat');
-new WordObject('dog', 'perro', 'chien');
-new WordObject('yes', 'sí', 'oui');
-new WordObject('no', 'no', 'non');
-new WordObject('hello', 'hola', 'bonjour');
-new WordObject('goodbye', 'adiós', 'au revoir');
-new WordObject('monkey', 'mono', 'singe');
-
-
-var user_name;
-
-console.log(localStorage.getItem('user_name'));
-// alert(localStorage.user_name);
-
 // Loop to render all words into array and stores it
-for (var i = 0;  i < numOfAsteroids; i++){
+for (var i = 0; i < numOfAsteroids; i++){
   renderWord(i);
 }
 
-// Stores word array to local storage
-storeWordArray();
+var tableHeaderArray = ['Rank', 'User Name', 'Score'];
+var rankArray = ['#1', '#2', '#3', '#4', '#5'];
+var userResultsObjArray = [];
 
 
 // Table for score
-
-var table_El = document.getElementById('scoreBoard');
+var scoreBoardTable = document.getElementById('scoreBoard');
 function buildHeader() {
-  var tr_El = document.createElement('tr');
-  var tdOne_El = document.createElement('td');
-  tdOne_El.textContent = 'rank';
-  var tdTwo_El = document.createElement('td');
-  tdTwo_El.textContent = 'username';
-  var tdThree_El = document.createElement('td');
-  tdThree_El.textContent = 'score';
-  tr_El.appendChild(tdOne_El);
-  tr_El.appendChild(tdTwo_El);
-  tr_El.appendChild(tdThree_El);
-  table_El.appendChild(tr_El);
+  var header_tr = document.createElement('tr');
+  for(var i = 0; i < tableHeaderArray.length; i++){
+    var header_td = document.createElement('td');
+    header_td.textContent = tableHeaderArray[i];
+
+    header_tr.appendChild(header_td);
+  }
+  scoreBoardTable.appendChild(header_tr);
 }
 
-function addRow() {
-  for(var i = 0; i < 5; i++){
-    var next_tr = document.createElement('tr');
-    for(var j = 0; j < 3; j++){
-      var next_td = document.createElement('td');
-      next_td.textContent = scoresArray[i];
-      next_tr.appendChild(next_td);
-    }
-    table_El.appendChild(next_tr);
+function addRow(index) {
+
+  var next_tr = document.createElement('tr');
+
+  var rank_td = document.createElement('td');
+  rank_td.textContent = rankArray[index];
+  next_tr.appendChild(rank_td);
+
+  var userName_td = document.createElement('td');
+  userName_td.textContent = highScoresArray[index].userName;
+  next_tr.appendChild(userName_td);
+
+  var score_td = document.createElement('td');
+  score_td.textContent = highScoresArray[index].score;
+  next_tr.appendChild(score_td);
+
+  scoreBoardTable.appendChild(next_tr);
+}
+
+//Constructor for User Results
+var UserResultsObject = function(userName, score){
+  this.userName = userName;
+  this.score = score;
+};
+
+//function that collects highest scores
+function getHighScores() {
+  highScoresArray = [];
+
+  userResultsObjArray.sort(function(a, b){return b.score - a.score});
+  highScoresArray = userResultsObjArray.slice(0, numHighScoreDisplayed + 1);
+}
+
+function endGame() {
+  var removeGame = document.getElementById('gameBackground').remove();
+  // removeGame.visibility = hidden;
+  for(var i = 0; i < formArray.length; i++){
+    formArray[i].removeEventListener('submit', handleUserInput);
   }
 }
 
+function playAgain(){
+  var endOfGameOptions = document.getElementById('endGame');
+  var playAgainLink = document.createElement('a');
+  playAgainLink.href='../index.html';
+  playAgainLink.textContent = 'Play Again?';
+  endOfGameOptions.appendChild(playAgainLink);
+}
