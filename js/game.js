@@ -24,7 +24,7 @@ for(var i = 0; i < numOfMissiles; i++){
   var form = document.getElementById(i);
   formArray.push(form);
 }
-var backgroundImage = document.getElementById('backgroundImage');
+var stylesheet = document.getElementById('theme-stylesheet');
 
 // Retrieves language and theme chosen by user
 var language = localStorage.getItem('language');
@@ -70,13 +70,11 @@ function randomWord(){
 }
 
 // Function to choose theme background for word
-function addTheme(index){
+function addTheme(){
   if(themeChosen === 'missiles'){
-    formArray[index].title = 'missiles';
-    backgroundImage.title = 'planet';
+    stylesheet.href = '../css/game-missiles.css';
   } else if(themeChosen === 'snakes'){
-    formArray[index].title = 'snakes';
-    backgroundImage.title = 'asteroid';
+    stylesheet.href = '../css/game-snakes.css';
   }
 }
 
@@ -89,7 +87,7 @@ function renderWord(index){
   formLabel.innerHTML = randomWord();
   missileDisplay.push(formLabel.innerHTML);
   formInput.name = 'formName';
-  addTheme(index);
+  addTheme();
   formArray[index].appendChild(formLabel);
   formArray[index].appendChild(formInput);
 }
@@ -125,6 +123,39 @@ function check(selector, userGuess){
   }
 }
 
+function end(){
+
+
+  var userScore = scoreTracker;
+  var stringyScore = JSON.stringify(userScore);
+  localStorage.setItem('Score', stringyScore);
+
+  var getName = localStorage.getItem('user');
+  var unStringName = JSON.parse(getName);
+  var getScore = localStorage.getItem('Score');
+  var unStringScore = JSON.parse(getScore);
+
+  if(localStorage.getItem('Results') === null) {
+    userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
+    stringyResultsArray = JSON.stringify(userResultsObjArray);
+    localStorage.setItem('Results', stringyResultsArray);
+  }else {
+    stringyResultsArray = localStorage.getItem('Results');
+    userResultsObjArray = JSON.parse(stringyResultsArray);
+    userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
+
+    stringyResultsArray = JSON.stringify(userResultsObjArray);
+    localStorage.setItem('Results', stringyResultsArray);
+  }
+  endGame();
+  getHighScores();
+  buildHeader();
+  for(var i = 0; i < numHighScoreDisplayed; i++){
+    addRow(i);
+  }
+  playAgain();
+}
+
 //Event handler
 function handleUserInput(event){
   event.preventDefault();
@@ -132,34 +163,9 @@ function handleUserInput(event){
   var userGuess = event.target.formName.value.toLowerCase();
   if (missilesLeft === 0 || missileLocation > 700){
     // Store score to local storage
-    var userScore = scoreTracker;
-    var stringyScore = JSON.stringify(userScore);
-    localStorage.setItem('Score', stringyScore);
+    check(selector, userGuess);
+    setTimeout(end, 3000);
 
-    var getName = localStorage.getItem('user');
-    var unStringName = JSON.parse(getName);
-    var getScore = localStorage.getItem('Score');
-    var unStringScore = JSON.parse(getScore);
-
-    if(localStorage.getItem('Results') === null) {
-      userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
-      stringyResultsArray = JSON.stringify(userResultsObjArray);
-      localStorage.setItem('Results', stringyResultsArray);
-    }else {
-      stringyResultsArray = localStorage.getItem('Results');
-      userResultsObjArray = JSON.parse(stringyResultsArray);
-      userResultsObjArray.push(new UserResultsObject(unStringName, unStringScore));
-
-      stringyResultsArray = JSON.stringify(userResultsObjArray);
-      localStorage.setItem('Results', stringyResultsArray);
-    }
-    endGame();
-    getHighScores();
-    buildHeader();
-    for(var i = 0; i < numHighScoreDisplayed; i++){
-      addRow(i);
-    }
-    playAgain();
   } else {
     check(selector, userGuess);
   }
