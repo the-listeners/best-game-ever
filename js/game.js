@@ -3,27 +3,21 @@
 // Global variables
 var prevNumArray = [];
 var tempNumArray = [];
-var spanishWordlabel = [];
-var formInputArray = [];
-var formLabelArray = [];
+var missileDisplay = [];
+var inputArray = [];
+var labelArray = [];
 var highScoresArray = [];
-
-var randomNumber;
-var numHighScoreDisplayed = 5;
-
-var formLabel;
-var formInput;
-var scoreTracker = 0;
-var userScore;
-var stringyScore;
 var stringyResultsArray = [];
-
-var numOfMissiles= 5;
-var missileTracker = 0;
 var formArray = [];
 
-var formsLeft = 5;
-var moveAsteroidRight = 0;
+var scoreTracker = 0;
+var numOfMissiles= 5;
+var missileTracker = 0;
+var missileLocation = 0;
+
+var missilesLeft = 4;
+
+var numHighScoreDisplayed = 5;
 
 // DOM REFERENCES
 for(var i = 0; i < numOfMissiles; i++){
@@ -40,9 +34,9 @@ var wordObjectArray = JSON.parse(stringyWordArray);
 
 // Random number function
 function randomizer(){
-  do{
-    randomNumber = Math.floor(Math.random() * wordObjectArray.length);
-  }while(prevNumArray.includes(randomNumber) || tempNumArray.includes(randomNumber));
+  do {
+    var randomNumber = Math.floor(Math.random() * wordObjectArray.length);
+  } while(prevNumArray.includes(randomNumber) || tempNumArray.includes(randomNumber));
 
   tempNumArray.push(randomNumber);
   return randomNumber;
@@ -50,17 +44,17 @@ function randomizer(){
 
 // Generating word for missile
 function randomWord(){
-  var numSelected = randomizer();
-  var selectedWord;
+  var numGenerated = randomizer();
+  var wordGenerated;
 
   if(language === 'spanish'){
-    selectedWord = wordObjectArray[numSelected].spanish;
+    wordGenerated = wordObjectArray[numGenerated].spanish;
   } else if(language === 'french'){
-    selectedWord = wordObjectArray[numSelected].french;
+    wordGenerated = wordObjectArray[numGenerated].french;
   } else if(language === 'latvian'){
-    selectedWord = wordObjectArray[numSelected].latvian;
+    wordGenerated = wordObjectArray[numGenerated].latvian;
   } else if(language === 'german'){
-    selectedWord = wordObjectArray[numSelected].german;
+    wordGenerated = wordObjectArray[numGenerated].german;
   }
 
   missileTracker++;
@@ -70,52 +64,50 @@ function randomWord(){
     tempNumArray = [];
     missileTracker = 0;
   }
-  return selectedWord;
+  return wordGenerated;
 }
 
 // Function to create form
 function renderWord(index){
-  formLabel = document.createElement('Label');
-  formLabelArray.push(formLabel);
-  formInput = document.createElement('input');
-  formInputArray.push(formInput);
+  var formLabel = document.createElement('Label');
+  labelArray.push(formLabel);
+  var formInput = document.createElement('input');
+  inputArray.push(formInput);
   formLabel.innerHTML = randomWord();
-  spanishWordlabel.push(formLabel.innerHTML);
+  missileDisplay.push(formLabel.innerHTML);
   formInput.name = 'formName';
   formArray[index].appendChild(formLabel);
   formArray[index].appendChild(formInput);
 }
 
+// Function to move missile
+function moveMissile(){
+  missileLocation += 100;
+  for(var i = 0; i < formArray.length; i++){
+    formArray[i].style.left = missileLocation + 'px';
+  }
+}
+
 //Function to check
 function check(selector, userGuess){
-  var grabSelectedWordFromFormLabel = spanishWordlabel[selector];
+  var userSelectedMissile = missileDisplay[selector];
 
   for(var i = 0; i < wordObjectArray.length; i++){
-    if(grabSelectedWordFromFormLabel === wordObjectArray[i].spanish || grabSelectedWordFromFormLabel === wordObjectArray[i].french || grabSelectedWordFromFormLabel === wordObjectArray[i].latvian || grabSelectedWordFromFormLabel === wordObjectArray[i].german){
-      var checkWordObject = wordObjectArray[i];
+    if(userSelectedMissile === wordObjectArray[i].spanish || userSelectedMissile === wordObjectArray[i].french || userSelectedMissile === wordObjectArray[i].latvian || userSelectedMissile === wordObjectArray[i].german){
+      var chosenWord = wordObjectArray[i];
     }
   }
 
-  if (userGuess === checkWordObject.english){
+  if (userGuess === chosenWord.english){
+    moveMissile();
     scoreTracker = scoreTracker + 1000;
-    formsLeft -= 1;
+    missilesLeft -= 1;
     formArray[selector].className = 'mover';
 
-    formArray[selector].removeChild(formLabelArray[selector]);
-    formArray[selector].removeChild(formInputArray[selector]);
-
-    moveAsteroidRight += 100;
-    for(var i = 0; i < formArray.length; i++){
-      formArray[i].style.left = moveAsteroidRight + 'px';
-    }
+    formArray[selector].removeChild(labelArray[selector]);
+    formArray[selector].removeChild(inputArray[selector]);
   } else{
-    moveAsteroidRight += 100;
-    for(var i = 0; i < formArray.length; i++){
-      formArray[i].style.left = moveAsteroidRight + 'px';
-      // if(moveAsteroidRight >= 700){
-      //   moveAsteroidRight -= 100;
-      // }
-    }
+    moveMissile();
   }
 }
 
@@ -124,10 +116,10 @@ function handleUserInput(event){
   event.preventDefault();
   var selector = event.target.id;
   var userGuess = event.target.formName.value.toLowerCase();
-  if (formsLeft === 0 || moveAsteroidRight > 700){
+  if (missilesLeft === 0 || missileLocation > 700){
     // Store score to local storage
-    userScore = scoreTracker;
-    stringyScore = JSON.stringify(userScore);
+    var userScore = scoreTracker;
+    var stringyScore = JSON.stringify(userScore);
     localStorage.setItem('Score', stringyScore);
 
     var getName = localStorage.getItem('user');
@@ -159,13 +151,13 @@ function handleUserInput(event){
   }
 }
 
-for(var i = 0; i < formArray.length; i++){
-  formArray[i].addEventListener('submit', handleUserInput);
+for(var j = 0; j < formArray.length; j++){
+  formArray[j].addEventListener('submit', handleUserInput);
 }
 
 // Loop to render all words into array and stores it
-for (var i = 0; i < numOfMissiles; i++){
-  renderWord(i);
+for (var k = 0; k < numOfMissiles; k++){
+  renderWord(k);
 }
 
 var tableHeaderArray = ['Rank', 'User Name', 'Score'];
@@ -186,7 +178,6 @@ function buildHeader() {
 }
 
 function addRow(index) {
-
   var next_tr = document.createElement('tr');
 
   var rank_td = document.createElement('td');

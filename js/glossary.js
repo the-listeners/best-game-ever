@@ -44,8 +44,8 @@ for (var i = 0; i < wordObjectArray.length; i++){
   } else if(language === 'german'){
     otherLanguageCell.textContent = wordObjectArray[i].german;
   }
-  tableRow.appendChild(otherLanguageCell);
 
+  tableRow.appendChild(otherLanguageCell);
   table.appendChild(tableRow);
 }
 
