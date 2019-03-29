@@ -102,7 +102,7 @@ nav > ul > li {
 
 main {
   background: no-repeat;
-  background-image: url(/images/plane.png);
+  background-image: url(../images/plane.png);
   background-position-x: 500px;
 }
 
@@ -118,7 +118,7 @@ main {
 }
 
 form {
-  background-image: url(/images/snake.png);
+  background-image: url(../images/snake.png);
   background-size: 500px;
   background-position: -50px -9px;
 }
