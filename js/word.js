@@ -34,7 +34,7 @@ new WordObject('two', 'dos', 'deux', 'divi', 'zwei');
 new WordObject('three', 'tres', 'trois', 'tris', 'drei');
 new WordObject('four', 'quatro', 'quatre', 'cetri', 'vier');
 new WordObject('five', 'cinco', 'cinq', 'pieci', 'fünf');
-new WordObject('red', 'rojo', 'six', 'sarkans', 'rot');
+new WordObject('red', 'rojo', 'rouge', 'sarkans', 'rot');
 new WordObject('blue', 'azul', 'bleu', 'zils', 'blau');
 new WordObject('green', 'verde', 'vert', 'zals', 'grün');
 new WordObject('yellow', 'amarillo', 'jaune', 'dzeltens', 'gelb');
